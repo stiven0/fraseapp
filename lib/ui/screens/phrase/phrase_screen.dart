@@ -47,7 +47,7 @@ class PhraseScreen extends ConsumerWidget {
               return child;
             },
             errorBuilder: (context, error, stackTrace) {
-              return Image.asset('assets/images/default-image.jpg', fit: BoxFit.cover);
+              return Image.asset('assets/images/default_image.jpg', fit: BoxFit.cover);
             },
           )
         ),
