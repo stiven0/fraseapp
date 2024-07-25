@@ -36,11 +36,15 @@ class FavoriteScreenState extends ConsumerState<FavoriteScreen> {
     final favoritePhrases = ref.watch( favoritesPhrasesProvider );
     final colorsScheme = Theme.of(context).colorScheme;
     final size = MediaQuery.of(context).size;
+    final bool isDarkMode = ref.watch( themeNotifierProvider ).isDarkMode;
 
     if ( !isLoading ) {
 
-      return const Center(
-        child:  CircularProgressIndicator(strokeWidth: 2, color: Colors.blue)
+      return Center(
+        child:  CircularProgressIndicator(
+          strokeWidth: 2, 
+          color: isDarkMode ? colorsScheme.surface : colorsScheme.primary
+        )
       );
 
     } else {

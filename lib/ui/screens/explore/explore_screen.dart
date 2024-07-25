@@ -64,9 +64,15 @@ class ExploreScreenState extends ConsumerState<ExploreScreen> {
   @override
   Widget build(BuildContext context) {
 
+    final colorsTheme = Theme.of(context).colorScheme;
+    final bool isDarkMode = ref.watch( themeNotifierProvider ).isDarkMode;
+
     return isLoading 
-    ? const Center(
-        child:  CircularProgressIndicator(strokeWidth: 2, color: Colors.blue)
+    ? Center(
+        child:  CircularProgressIndicator(
+          strokeWidth: 2, 
+          color: isDarkMode ? colorsTheme.surface : colorsTheme.primary
+        )
       )
     : PhraseScreen(favorite: phrase!);
   }
