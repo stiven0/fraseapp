@@ -3,6 +3,11 @@ import 'package:shared_preferences/shared_preferences.dart';
 
 import 'package:fraseapp/core/core.dart';
 
+enum RequestNotification {
+  approved,
+  denied
+}
+
 class StorageService {
 
   Future<SharedPreferences> getSharedPrefs() async {
@@ -88,6 +93,29 @@ class StorageService {
 
     return false;
 
+  }
+
+  /// Save or remove the expiration of the time to request notification permission
+  Future<bool> setOrDeleteWaitingTimeToRequestNotification( RequestNotification action ) async {
+
+    final prefs = await getSharedPrefs();
+    if ( action == RequestNotification.denied ) {
+      final time = DateTime.now().add(const Duration(minutes: 1));
+      return prefs.setString('TimeToRequestNotification', time.toString());
+    } else {
+      return prefs.remove('TimeToRequestNotification');
+    }
+
+  }
+
+  /// Get time the expiration to request notification permission 
+  Future<String> getTimeToRequestNotification() async {
+    final prefs = await getSharedPrefs();
+    final timeExpiration = prefs.getString('TimeToRequestNotification');
+    if ( timeExpiration != null ) {
+      return timeExpiration;
+    }
+    return 'null';
   }
 
 }

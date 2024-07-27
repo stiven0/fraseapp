@@ -3,6 +3,7 @@ import 'package:flutter_local_notifications/flutter_local_notifications.dart';
 import 'package:timezone/data/latest_all.dart' as tz;
 import 'package:timezone/timezone.dart' as tz;
 
+import 'package:fraseapp/core/core.dart';
 import 'package:fraseapp/config/config.dart';
 
 class LocalNotifications {
@@ -10,6 +11,8 @@ class LocalNotifications {
   static Future<void> requestPermissionsLocalNotifications( BuildContext context, TextTheme textStyles ) async {
 
     await Future.delayed(const Duration(seconds: 2));
+
+    final storageService = StorageService();
 
     final flutterLocalNotificationsPlugin = FlutterLocalNotificationsPlugin();
     final bool? areEnabled = await flutterLocalNotificationsPlugin
@@ -19,10 +22,12 @@ class LocalNotifications {
     if ( areEnabled != null && areEnabled ) return;
 
     // mostrar dialog para preguntar si desea activar notificaciones
-    if (!context.mounted) return;
-    // TODO: DETERMINAR CUANDO SE MUESTRA EL MENSAJE SI EL USUARIO YA HA CANCELADO LAS NOTIFICACIONES
+    if ( !context.mounted ) return;
     final isGranted = await openGrantedNotificationDialog( context, textStyles );
-    if ( !isGranted ) return;
+    if ( !isGranted ) {
+      await storageService.setOrDeleteWaitingTimeToRequestNotification( RequestNotification.denied );
+      return;
+    }
 
     await flutterLocalNotificationsPlugin
     .resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()

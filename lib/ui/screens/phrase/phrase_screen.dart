@@ -112,8 +112,23 @@ class PhraseScreen extends ConsumerWidget {
               final isFavorite = await favoritesProvider.isPhraseFavorite( favorite.phrase );
               if ( !context.mounted ) return;
               if ( isFavorite ) {
+
                 showSnackbarNotification( 'Agregado a favoritos', context );
-                LocalNotifications.requestPermissionsLocalNotifications( context, textStyles );
+                final timeExpirationRequestNotification = await ref.read( favoritesPhrasesProvider.notifier ).getTimeToRequestNotification();
+                if ( timeExpirationRequestNotification != 'null' ) {
+                  final timeExpiration = DateTime.parse(timeExpirationRequestNotification);
+                  if ( timeExpiration.isBefore( DateTime.now() ) ) {
+                    ref.read( favoritesPhrasesProvider.notifier ).setOrDeleteWaitingTimeToRequestNotification(
+                      RequestNotification.approved
+                    );
+                    if ( !context.mounted ) return;
+                    LocalNotifications.requestPermissionsLocalNotifications( context, textStyles );
+                  }
+                } else {
+                  if ( !context.mounted ) return;
+                  LocalNotifications.requestPermissionsLocalNotifications( context, textStyles );
+                }
+
               }
             }, 
             icon: isFavoriteFuture.when(
