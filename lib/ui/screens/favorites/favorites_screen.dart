@@ -231,8 +231,8 @@ class _CustomDismissibleFavorite extends ConsumerWidget {
             favorite['date'] = DateTime.parse( favorite['date'] );
             final PhraseEntitie phrase = PhraseMapper.jsonToEntity( favorite );
             await ref.read( favoritesPhrasesProvider.notifier ).tooglePhraseFavorite( phrase );
-            await ref.read( favoritesPhrasesProvider.notifier ).getPhrasesFavorites( toDelay: false );
             ref.invalidate( isPhraseFavoriteProvider( favorite['phrase'] ) );
+            await ref.read( favoritesPhrasesProvider.notifier ).getPhrasesFavorites( toDelay: false );
           }
           return response;
         }
