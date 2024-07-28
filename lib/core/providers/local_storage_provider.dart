@@ -43,8 +43,8 @@ class LocalStoragePhrasesNotifier extends StateNotifier<List<dynamic>> {
     return await storageService.getTimeToRequestNotification();
   }
 
-  Future<bool> setOrDeleteWaitingTimeToRequestNotification( RequestNotification statusNotification ) async {
-    return await storageService.setOrDeleteWaitingTimeToRequestNotification( statusNotification );
+  Future<bool> setOrDeleteWaitingTimeToRequestNotification( RequestNotification action ) async {
+    return await storageService.setOrDeleteWaitingTimeToRequestNotification( action );
   }
 
 }
