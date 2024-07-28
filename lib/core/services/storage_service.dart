@@ -100,7 +100,7 @@ class StorageService {
 
     final prefs = await getSharedPrefs();
     if ( action == RequestNotification.denied ) {
-      final time = DateTime.now().add(const Duration(minutes: 1));
+      final time = DateTime.now().add(const Duration(days: 3));
       return prefs.setString('TimeToRequestNotification', time.toString());
     } else {
       return prefs.remove('TimeToRequestNotification');
