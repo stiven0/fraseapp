@@ -112,7 +112,7 @@ class PhraseScreen extends ConsumerWidget {
               final isFavorite = await favoritesProvider.isPhraseFavorite( favorite.phrase );
               if ( !context.mounted ) return;
               if ( isFavorite ) {
-
+                
                 showSnackbarNotification( 'Agregado a favoritos', context );
                 final timeExpirationRequestNotification = await ref.read( favoritesPhrasesProvider.notifier ).getTimeToRequestNotification();
                 if ( timeExpirationRequestNotification != 'null' ) {
