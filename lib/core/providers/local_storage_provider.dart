@@ -29,7 +29,7 @@ class LocalStoragePhrasesNotifier extends StateNotifier<List<dynamic>> {
   }
 
   Future<List<dynamic>> getPhrasesFavorites({ bool toDelay = true }) async {
-    if ( toDelay ) await Future.delayed(const Duration(seconds: 2));
+    if ( toDelay ) await Future.delayed(const Duration(milliseconds: 1800));
     final phrases = await storageService.getPhrasesFavorites();
     state = phrases;
     return phrases;
