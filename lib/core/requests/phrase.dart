@@ -2,6 +2,7 @@ import 'package:dio/dio.dart';
 import 'dart:convert';
 
 import 'package:fraseapp/config/config.dart';
+import 'package:fraseapp/shared/shared.dart';
 
 class Phrase {
 
@@ -19,10 +20,14 @@ class Phrase {
 
     } on DioException catch (e) {
 
-      throw Exception(e.message);
+      if ( e.type == DioExceptionType.connectionTimeout ) {
+        throw CustomError(Errors.failedConnection);
+      }
+
+      throw CustomError(Errors.serverError);
 
     } catch (e) {
-      throw Exception();
+      throw CustomError(Errors.serverError);
     }
 
   }

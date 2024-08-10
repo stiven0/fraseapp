@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:fraseapp/config/config.dart';
 import 'package:fraseapp/core/core.dart';
+import 'package:fraseapp/shared/shared.dart';
 import '../../ui.dart';
 
 class ExploreScreen extends ConsumerStatefulWidget {
@@ -16,6 +17,7 @@ class ExploreScreenState extends ConsumerState<ExploreScreen> {
 
   PhraseEntitie? phrase;
   bool isLoading = false;
+  Errors error = Errors.none;
 
   getImageAndPhraseInitial() async {
 
@@ -33,9 +35,17 @@ class ExploreScreenState extends ConsumerState<ExploreScreen> {
       isLoading = false;
       setState(() {});
       
+    } on CustomError catch (e) {
+
+      isLoading = false;
+      error = e.message;
+      setState(() {});
+
     } catch (e) {
 
-      //TODO: HANDLE ERROR
+      isLoading = false;
+      error = Errors.serverError;
+      setState(() {});
 
     }
   }
@@ -66,6 +76,7 @@ class ExploreScreenState extends ConsumerState<ExploreScreen> {
 
     final colorsTheme = Theme.of(context).colorScheme;
     final bool isDarkMode = ref.watch( themeNotifierProvider ).isDarkMode;
+    final size = MediaQuery.of(context).size;
 
     return isLoading 
     ? Center(
@@ -74,7 +85,39 @@ class ExploreScreenState extends ConsumerState<ExploreScreen> {
           color: isDarkMode ? colorsTheme.surface : colorsTheme.primary
         )
       )
-    : PhraseScreen(favorite: phrase!);
+    : error == Errors.none 
+    ? PhraseScreen(favorite: phrase!) 
+    : Center(
+      child: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
+        children: [
+          Icon( Icons.error_outline, size: 70, color: colorsTheme.primary ),
+          const SizedBox(height: 20),
+          SizedBox(
+            width: size.width * 0.9,
+            child: Text(
+              'Ha ocurrido un error, verifica tu conexión e inténtalo nuevamente', 
+              style: TextStyle(fontSize: 20, color: isDarkMode ? colorsTheme.surface : Colors.black45),
+              textAlign: TextAlign.center,
+            ),
+          ),
+          const SizedBox(height: 20),
+          FilledButton.icon(
+            onPressed: () {
+              print('intentar');
+            }, 
+            icon: const Icon( Icons.restart_alt_outlined ), 
+            label: const Text('Intentar'),
+            iconAlignment: IconAlignment.start,
+            style: ButtonStyle( 
+              backgroundColor: WidgetStateProperty.all( isDarkMode ? Colors.black87 : colorsTheme.primary ),
+              foregroundColor:  WidgetStateProperty.all( isDarkMode ? Colors.white : Colors.white ), 
+            ),
+          )
+        ],
+      ),
+    );
   }
 
 }

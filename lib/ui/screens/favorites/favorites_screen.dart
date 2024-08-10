@@ -66,8 +66,12 @@ class FavoriteScreenState extends ConsumerState<FavoriteScreen> {
               const SizedBox(height: 30),
 
               FilledButton.tonal(
-                onPressed: () => context.go('/'), 
-                child: const Text('Ver frase del dia')
+                onPressed: () => context.go('/'),
+                style: ButtonStyle(
+                  backgroundColor: WidgetStateProperty.all( isDarkMode ? Colors.black87 : colorsScheme.primary ),
+                  foregroundColor: WidgetStateProperty.all( Colors.white ) 
+                ), 
+                child: const Text('Ver frase del dia'),
               )
             ],
           ),
