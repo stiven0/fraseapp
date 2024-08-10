@@ -228,7 +228,7 @@ class _CustomDismissibleFavorite extends ConsumerWidget {
         if ( direction == DismissDirection.endToStart ) {
           final response = await openDialogQuestionDeletePhrase(context, textStyles);
           if ( response ) {
-            favorite['date'] = DateTime.parse( favorite['date'] );
+            favorite['date'] = ( favorite['date'] is DateTime ) ? favorite['date'] : DateTime.parse( favorite['date'] );
             final PhraseEntitie phrase = PhraseMapper.jsonToEntity( favorite );
             await ref.read( favoritesPhrasesProvider.notifier ).tooglePhraseFavorite( phrase );
             ref.invalidate( isPhraseFavoriteProvider( favorite['phrase'] ) );
