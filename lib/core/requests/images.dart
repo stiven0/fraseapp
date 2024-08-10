@@ -1,6 +1,7 @@
 import 'package:dio/dio.dart';
 
 import 'package:fraseapp/config/config.dart';
+import 'package:fraseapp/shared/shared.dart';
 
 class Images {
 
@@ -17,8 +18,17 @@ class Images {
       return image;
 
       
+    } on DioException catch (e) {
+
+      if ( e.type == DioExceptionType.connectionTimeout ) {
+        throw CustomError(Errors.failedConnection);
+      }
+
+      throw CustomError(Errors.serverError);
+      
     } catch (e) {
-      throw Exception();
+      throw CustomError(Errors.serverError);
+      
     }
 
   }

@@ -104,10 +104,12 @@ class ExploreScreenState extends ConsumerState<ExploreScreen> {
           ),
           const SizedBox(height: 20),
           FilledButton.icon(
-            onPressed: () {
+            onPressed: () async {
+              isLoading = true;
+              setState(() {});
+              await Future.delayed(const Duration(seconds: 2));
               getImageAndPhraseInitial();
               error = Errors.none;
-              setState(() {});
             }, 
             icon: const Icon( Icons.restart_alt_outlined ), 
             label: const Text('Intentar'),
