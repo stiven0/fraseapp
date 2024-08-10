@@ -33,9 +33,9 @@ class LocalNotifications {
     .resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()
     ?.requestNotificationsPermission();
 
-    await flutterLocalNotificationsPlugin
-    .resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()
-    ?.requestExactAlarmsPermission();
+    // await flutterLocalNotificationsPlugin
+    // .resolvePlatformSpecificImplementation<AndroidFlutterLocalNotificationsPlugin>()
+    // ?.requestExactAlarmsPermission();
 
   }
 
