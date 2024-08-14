@@ -1,7 +1,6 @@
 import 'package:dio/dio.dart';
 
 import 'package:fraseapp/config/config.dart';
-import 'package:fraseapp/shared/shared.dart';
 
 class Images {
 
@@ -16,19 +15,9 @@ class Images {
       final response = await dio.get('/700');
       final image = response.realUri.toString();
       return image;
-
-      
-    } on DioException catch (e) {
-
-      if ( e.type == DioExceptionType.connectionTimeout ) {
-        throw CustomError(Errors.failedConnection);
-      }
-
-      throw CustomError(Errors.serverError);
       
     } catch (e) {
-      throw CustomError(Errors.serverError);
-      
+      return 'assets/images/default_image.jpg';
     }
 
   }

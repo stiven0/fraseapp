@@ -19,7 +19,7 @@ class Phrase {
       return phrase;
 
     } on DioException catch (e) {
-
+      
       if ( e.type == DioExceptionType.connectionTimeout ) {
         throw CustomError(Errors.failedConnection);
       }
