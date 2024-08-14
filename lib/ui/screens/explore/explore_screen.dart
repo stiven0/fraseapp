@@ -4,7 +4,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'package:fraseapp/config/config.dart';
 import 'package:fraseapp/core/core.dart';
 import 'package:fraseapp/shared/shared.dart';
-import '../../ui.dart';
+import 'package:fraseapp/ui/ui.dart';
 
 class ExploreScreen extends ConsumerStatefulWidget {
   const ExploreScreen({super.key});
