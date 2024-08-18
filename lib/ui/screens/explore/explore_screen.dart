@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
+import 'package:go_router/go_router.dart';
+import 'package:quick_actions/quick_actions.dart';
 
 import 'package:fraseapp/config/config.dart';
 import 'package:fraseapp/core/core.dart';
@@ -18,6 +20,18 @@ class ExploreScreenState extends ConsumerState<ExploreScreen> {
   PhraseEntitie? phrase;
   bool isLoading = false;
   Errors error = Errors.none;
+
+  /// application quick actions are initialized
+  initializeQuickActions() {  
+    const QuickActions quickActions = QuickActions();
+    quickActions.initialize((String shortcutType) {
+      if (shortcutType == 'action_favorites') context.go('/favorites');
+    });
+
+    quickActions.setShortcutItems(<ShortcutItem>[
+      const ShortcutItem(type: 'action_favorites', localizedTitle: 'favoritos', icon: 'app_icon' ),
+    ]);
+  }
 
   getImageAndPhraseInitial() async {
 
@@ -67,6 +81,7 @@ class ExploreScreenState extends ConsumerState<ExploreScreen> {
   @override
   void initState() {
     super.initState();
+    initializeQuickActions();
     getImageAndPhraseInitial();
     LocalNotifications.scheduleDailyNotification();
   }
