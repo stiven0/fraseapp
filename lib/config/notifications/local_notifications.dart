@@ -21,7 +21,7 @@ class LocalNotifications {
 
     if ( areEnabled != null && areEnabled ) return;
 
-    // mostrar dialog para preguntar si desea activar notificaciones
+    // show dialog to ask if you want to activate notifications
     if ( !context.mounted ) return;
     final isGranted = await openGrantedNotificationDialog( context, textStyles );
     if ( !isGranted ) {
