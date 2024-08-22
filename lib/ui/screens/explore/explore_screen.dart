@@ -78,6 +78,17 @@ class ExploreScreenState extends ConsumerState<ExploreScreen> {
 
   }
 
+  /// reload data every time it is invoked
+  void reloadData({delayed = true}) async {
+
+    isLoading = true;
+    setState(() {});
+    if ( delayed ) await Future.delayed(const Duration(seconds: 2));
+    getImageAndPhraseInitial();
+    error = Errors.none;
+    
+  }
+
   @override
   void initState() {
     super.initState();
@@ -101,7 +112,14 @@ class ExploreScreenState extends ConsumerState<ExploreScreen> {
         )
       )
     : error == Errors.none 
-    ? PhraseScreen(favorite: phrase!) 
+    ? Scaffold(
+      body: PhraseScreen(favorite: phrase!),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () => reloadData(delayed: false),
+        backgroundColor: isDarkMode ? colorsTheme.surface : colorsTheme.primary,
+        child: const Icon( Icons.refresh_outlined, color: Colors.white, ),
+      ),
+    ) 
     : Center(
       child: Column(
         mainAxisAlignment: MainAxisAlignment.center,
@@ -119,13 +137,7 @@ class ExploreScreenState extends ConsumerState<ExploreScreen> {
           ),
           const SizedBox(height: 20),
           FilledButton.icon(
-            onPressed: () async {
-              isLoading = true;
-              setState(() {});
-              await Future.delayed(const Duration(seconds: 2));
-              getImageAndPhraseInitial();
-              error = Errors.none;
-            }, 
+            onPressed: () => reloadData(), 
             icon: const Icon( Icons.restart_alt_outlined ), 
             label: const Text('Intentar'),
             iconAlignment: IconAlignment.start,
