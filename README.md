@@ -1,4 +1,4 @@
-# fraseapp 🚀
+# fraseapp
 
 ## Built with 🛠️
 * [Dart](https://dart.dev/guides) - Dart
