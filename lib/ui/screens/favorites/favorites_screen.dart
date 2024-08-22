@@ -6,6 +6,11 @@ import 'package:fraseapp/core/core.dart';
 import 'package:fraseapp/ui/screens/phrase/phrase_screen.dart';
 import 'package:go_router/go_router.dart';
 
+enum TypeOrder {
+  defect,
+  date
+}
+
 class FavoriteScreen extends ConsumerStatefulWidget {
   const FavoriteScreen({super.key});
 
@@ -16,6 +21,7 @@ class FavoriteScreen extends ConsumerStatefulWidget {
 class FavoriteScreenState extends ConsumerState<FavoriteScreen> {
 
   bool isLoading = false;
+  TypeOrder order = TypeOrder.defect;
 
   loadfavoritesPhrases() async {
     isLoading = false;
@@ -79,41 +85,59 @@ class FavoriteScreenState extends ConsumerState<FavoriteScreen> {
 
       }
 
-      return CustomScrollView(
-        slivers: [
-
-          SliverAppBar(
-            toolbarHeight: size.height * 0.11,
-            floating: true,
-            flexibleSpace: FlexibleSpaceBar(
-              title: Text(
-                'Lista de favoritos: ${ favoritePhrases.length }', 
-                style: TextStyle( 
-                  fontSize: 20, 
-                  color: colorsScheme.brightness == Brightness.light ? colorsScheme.primary : colorsScheme.surface, 
-                  fontWeight: FontWeight.bold 
-                )
+      return Scaffold(
+        body: CustomScrollView(
+          slivers: [
+        
+            SliverAppBar(
+              toolbarHeight: size.height * 0.1,
+              floating: true,
+              flexibleSpace: FlexibleSpaceBar(
+                title: Text(
+                  'Lista de favoritos: ${ favoritePhrases.length }', 
+                  style: TextStyle( 
+                    fontSize: 20, 
+                    color: colorsScheme.brightness == Brightness.light ? colorsScheme.primary : colorsScheme.surface, 
+                    fontWeight: FontWeight.bold 
+                  )
+                ),
+                titlePadding: const EdgeInsets.symmetric(vertical: 20.0),
+                centerTitle: true,
               ),
-              titlePadding: const EdgeInsets.symmetric(vertical: 20.0),
-              centerTitle: true,
+              automaticallyImplyLeading: false
             ),
-            automaticallyImplyLeading: false
-          ),
-
-          SliverList(
-            delegate: SliverChildBuilderDelegate(
-              (BuildContext context, int index) {
-                return Column(
-                  children: [
-                    _CustomListFavorites(favorites: favoritePhrases)
-                  ],
-                );
-              },
-              childCount: 1
+        
+            SliverList(
+              delegate: SliverChildBuilderDelegate(
+                (BuildContext context, int index) {
+                  return Column(
+                    children: [
+                      _CustomListFavorites(favorites: favoritePhrases)
+                    ],
+                  );
+                },
+                childCount: 1
+              )
             )
-          )
-
-        ],
+        
+          ],
+        ),
+        floatingActionButton: favoritePhrases.length > 1 
+        ? FloatingActionButton(
+          onPressed: (){
+            if ( order == TypeOrder.defect ) {
+              favoritePhrases.sort((a, b) => DateTime.parse(b['date']).isBefore( DateTime.parse(a['date'] )) ? 1 : -1);
+              order = TypeOrder.date;
+            } else {
+              favoritePhrases.sort((a, b) => DateTime.parse(a['date']).isBefore( DateTime.parse(b['date'] )) ? 1 : -1);
+              order = TypeOrder.defect;
+            }
+            setState(() {});
+          },
+          backgroundColor: colorsScheme.primary,
+          child: Icon(Icons.low_priority_outlined, color: colorsScheme.brightness == Brightness.light ? Colors.white : Colors.black),
+        ) 
+        : null,
       );
 
     }
