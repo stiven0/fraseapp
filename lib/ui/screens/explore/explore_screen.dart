@@ -116,8 +116,8 @@ class ExploreScreenState extends ConsumerState<ExploreScreen> {
       body: PhraseScreen(favorite: phrase!),
       floatingActionButton: FloatingActionButton(
         onPressed: () => reloadData(delayed: false),
-        backgroundColor: isDarkMode ? colorsTheme.surface : colorsTheme.primary,
-        child: const Icon( Icons.refresh_outlined, color: Colors.white, ),
+        backgroundColor: colorsTheme.primary,
+        child: Icon( Icons.refresh_outlined, color: isDarkMode ? Colors.black : Colors.white ),
       ),
     ) 
     : Center(
