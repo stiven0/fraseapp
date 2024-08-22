@@ -126,10 +126,14 @@ class FavoriteScreenState extends ConsumerState<FavoriteScreen> {
         ? FloatingActionButton(
           onPressed: (){
             if ( order == TypeOrder.defect ) {
-              favoritePhrases.sort((a, b) => DateTime.parse(b['date']).isBefore( DateTime.parse(a['date'] )) ? 1 : -1);
+              favoritePhrases.sort((a, b) {
+                return DateTime.parse( b['date'].toString() ).isBefore( DateTime.parse( a['date'].toString() )) ? 1 : -1;
+              });
               order = TypeOrder.date;
             } else {
-              favoritePhrases.sort((a, b) => DateTime.parse(a['date']).isBefore( DateTime.parse(b['date'] )) ? 1 : -1);
+              favoritePhrases.sort((a, b) {
+                return DateTime.parse( a['date'].toString() ).isBefore( DateTime.parse( b['date'].toString() )) ? 1 : -1;
+              });
               order = TypeOrder.defect;
             }
             setState(() {});
