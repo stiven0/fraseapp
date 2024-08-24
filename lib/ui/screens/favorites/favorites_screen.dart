@@ -127,12 +127,12 @@ class FavoriteScreenState extends ConsumerState<FavoriteScreen> {
           onPressed: (){
             if ( order == TypeOrder.defect ) {
               favoritePhrases.sort((a, b) {
-                return DateTime.parse( b['date'].toString() ).isBefore( DateTime.parse( a['date'].toString() )) ? 1 : -1;
+                return DateTime.parse( a['date'].toString() ).isBefore( DateTime.parse( b['date'].toString() )) ? 1 : -1;
               });
               order = TypeOrder.date;
             } else {
               favoritePhrases.sort((a, b) {
-                return DateTime.parse( a['date'].toString() ).isBefore( DateTime.parse( b['date'].toString() )) ? 1 : -1;
+                return DateTime.parse( a['date'].toString() ).isBefore( DateTime.parse( b['date'].toString() )) ? -1 : 1;
               });
               order = TypeOrder.defect;
             }
