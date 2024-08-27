@@ -2,12 +2,19 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 
 import 'package:fraseapp/core/core.dart';
 
+enum TypeOrder {
+  defect,
+  date
+}
+
 final isPhraseFavoriteProvider = FutureProvider.autoDispose.family<bool, String>((ref, String phrase) async {
 
   final favoritesProvider = ref.watch( favoritesPhrasesProvider.notifier );
   return favoritesProvider.isPhraseFavorite(phrase);
 
 });
+
+final typeOrderPhraseProvider = StateProvider<TypeOrder>((ref) => TypeOrder.defect);
 
 final favoritesPhrasesProvider = StateNotifierProvider<LocalStoragePhrasesNotifier, List<dynamic>>((ref) {
 

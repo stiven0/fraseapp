@@ -129,6 +129,20 @@ class PhraseScreen extends ConsumerWidget {
                   LocalNotifications.requestPermissionsLocalNotifications( context, textStyles );
                 }
 
+              } else {
+
+                // sorting phrases
+                final order = ref.read(typeOrderPhraseProvider.notifier).state;
+                if ( order == TypeOrder.defect ) {
+                  ref.read(favoritesPhrasesProvider).sort((a, b) {
+                    return DateTime.parse( a['date'].toString() ).isBefore( DateTime.parse( b['date'].toString() )) ? -1 : 1;
+                  });
+                } else {
+                  ref.read(favoritesPhrasesProvider).sort((a, b) {
+                    return DateTime.parse( a['date'].toString() ).isBefore( DateTime.parse( b['date'].toString() )) ? 1 : -1;
+                  });
+                }
+
               }
             }, 
             icon: isFavoriteFuture.when(

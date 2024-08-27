@@ -6,11 +6,6 @@ import 'package:fraseapp/core/core.dart';
 import 'package:fraseapp/ui/screens/phrase/phrase_screen.dart';
 import 'package:go_router/go_router.dart';
 
-enum TypeOrder {
-  defect,
-  date
-}
-
 class FavoriteScreen extends ConsumerStatefulWidget {
   const FavoriteScreen({super.key});
 
@@ -21,7 +16,6 @@ class FavoriteScreen extends ConsumerStatefulWidget {
 class FavoriteScreenState extends ConsumerState<FavoriteScreen> {
 
   bool isLoading = false;
-  TypeOrder order = TypeOrder.defect;
 
   loadfavoritesPhrases() async {
     isLoading = false;
@@ -40,6 +34,7 @@ class FavoriteScreenState extends ConsumerState<FavoriteScreen> {
   Widget build(BuildContext context) {
 
     final favoritePhrases = ref.watch( favoritesPhrasesProvider );
+    final order = ref.watch( typeOrderPhraseProvider );
     final colorsScheme = Theme.of(context).colorScheme;
     final size = MediaQuery.of(context).size;
     final bool isDarkMode = ref.watch( themeNotifierProvider ).isDarkMode;
@@ -129,12 +124,12 @@ class FavoriteScreenState extends ConsumerState<FavoriteScreen> {
               favoritePhrases.sort((a, b) {
                 return DateTime.parse( a['date'].toString() ).isBefore( DateTime.parse( b['date'].toString() )) ? 1 : -1;
               });
-              order = TypeOrder.date;
+              ref.read(typeOrderPhraseProvider.notifier).state = TypeOrder.date;
             } else {
               favoritePhrases.sort((a, b) {
                 return DateTime.parse( a['date'].toString() ).isBefore( DateTime.parse( b['date'].toString() )) ? -1 : 1;
               });
-              order = TypeOrder.defect;
+              ref.read(typeOrderPhraseProvider.notifier).state = TypeOrder.defect;
             }
             setState(() {});
           },
@@ -260,11 +255,25 @@ class _CustomDismissibleFavorite extends ConsumerWidget {
         if ( direction == DismissDirection.endToStart ) {
           final response = await openDialogQuestionDeletePhrase(context, textStyles);
           if ( response ) {
+
             favorite['date'] = ( favorite['date'] is DateTime ) ? favorite['date'] : DateTime.parse( favorite['date'] );
             final PhraseEntitie phrase = PhraseMapper.jsonToEntity( favorite );
             await ref.read( favoritesPhrasesProvider.notifier ).tooglePhraseFavorite( phrase );
             ref.invalidate( isPhraseFavoriteProvider( favorite['phrase'] ) );
             await ref.read( favoritesPhrasesProvider.notifier ).getPhrasesFavorites( toDelay: false );
+
+            // sorting phrases 
+            final order = ref.read(typeOrderPhraseProvider.notifier).state;
+            if ( order == TypeOrder.defect ) {
+              ref.read(favoritesPhrasesProvider).sort((a, b) {
+                return DateTime.parse( a['date'].toString() ).isBefore( DateTime.parse( b['date'].toString() )) ? -1 : 1;
+              });
+            } else {
+              ref.read(favoritesPhrasesProvider).sort((a, b) {
+                return DateTime.parse( a['date'].toString() ).isBefore( DateTime.parse( b['date'].toString() )) ? 1 : -1;
+              });
+            }
+
           }
           return response;
         }
