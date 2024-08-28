@@ -109,6 +109,19 @@ class PhraseScreen extends ConsumerWidget {
               await favoritesProvider.tooglePhraseFavorite( favorite );
               ref.invalidate( isPhraseFavoriteProvider( favorite.phrase ) );
               await ref.read( favoritesPhrasesProvider.notifier ).getPhrasesFavorites( toDelay: false );
+
+              // sorting phrases
+              final order = ref.read(typeOrderPhraseProvider.notifier).state;
+              if ( order == TypeOrder.defect ) {
+                ref.read(favoritesPhrasesProvider).sort((a, b) {
+                  return DateTime.parse( a['date'].toString() ).isBefore( DateTime.parse( b['date'].toString() )) ? -1 : 1;
+                });
+              } else {
+                ref.read(favoritesPhrasesProvider).sort((a, b) {
+                  return DateTime.parse( a['date'].toString() ).isBefore( DateTime.parse( b['date'].toString() )) ? 1 : -1;
+                });
+              }
+              
               final isFavorite = await favoritesProvider.isPhraseFavorite( favorite.phrase );
               if ( !context.mounted ) return;
               if ( isFavorite ) {
@@ -132,7 +145,7 @@ class PhraseScreen extends ConsumerWidget {
               } else {
 
                 // sorting phrases
-                final order = ref.read(typeOrderPhraseProvider.notifier).state;
+                // final order = ref.read(typeOrderPhraseProvider.notifier).state;
                 if ( order == TypeOrder.defect ) {
                   ref.read(favoritesPhrasesProvider).sort((a, b) {
                     return DateTime.parse( a['date'].toString() ).isBefore( DateTime.parse( b['date'].toString() )) ? -1 : 1;
@@ -142,6 +155,7 @@ class PhraseScreen extends ConsumerWidget {
                     return DateTime.parse( a['date'].toString() ).isBefore( DateTime.parse( b['date'].toString() )) ? 1 : -1;
                   });
                 }
+                if ( ref.read(favoritesPhrasesProvider).isEmpty ) ref.read(typeOrderPhraseProvider.notifier).state = TypeOrder.date;
 
               }
             }, 
