@@ -8,7 +8,7 @@ void main() async {
 
   /// Config flavors
   AppConfig.create(
-    flavor: Flavor.prod
+    flavor: Flavor.dev
   );
 
   await Environments.initEnvironment();
@@ -36,9 +36,9 @@ class MainApp extends ConsumerWidget {
     final AppTheme appTheme = ref.watch( themeNotifierProvider );
 
     return MaterialApp.router(
-      debugShowCheckedModeBanner: false,
+      debugShowCheckedModeBanner: true,
       theme: appTheme.getTheme(),
-      routerConfig: appRouter
+      routerConfig: appRouter,
     );
   }
 }
