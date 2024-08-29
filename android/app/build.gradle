@@ -51,6 +51,20 @@ android {
         multiDexEnabled true
     }
 
+    flavorDimensions "default"
+    productFlavors {
+        prod {
+            dimension "default"
+            resValue "string", "fraseapp", "Fraseapp Prod"
+        }
+        dev {
+            dimension "default"
+            applicationIdSuffix ".dev"
+            resValue "string", "fraseapp_dev", "Fraseapp Dev"
+            versionNameSuffix ".dev"
+        }
+    }
+
     signingConfigs {
         release {
             keyAlias keystoreProperties['keyAlias']
