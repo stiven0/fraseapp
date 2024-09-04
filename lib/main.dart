@@ -7,9 +7,9 @@ import 'package:fraseapp/core/core.dart';
 void main() async {
 
   /// Config flavors
-  AppConfig.create(
-    flavor: Flavor.prod
-  );
+  // AppConfig.create(
+  //   flavor: Flavor.prod
+  // );
 
   await Environments.initEnvironment();
   await LocalNotifications.initializeLocalNotifications();
