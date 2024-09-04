@@ -88,6 +88,7 @@ class LocalNotifications {
       '¡Una nueva frase te espera!',
       scheduledDate, 
       notificationDetails,
+      androidScheduleMode: AndroidScheduleMode.inexactAllowWhileIdle,
       uiLocalNotificationDateInterpretation: UILocalNotificationDateInterpretation.absoluteTime,
       matchDateTimeComponents: DateTimeComponents.time
     );
