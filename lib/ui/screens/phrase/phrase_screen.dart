@@ -145,7 +145,6 @@ class PhraseScreen extends ConsumerWidget {
               } else {
 
                 // sorting phrases
-                // final order = ref.read(typeOrderPhraseProvider.notifier).state;
                 if ( order == TypeOrder.defect ) {
                   ref.read(favoritesPhrasesProvider).sort((a, b) {
                     return DateTime.parse( a['date'].toString() ).isBefore( DateTime.parse( b['date'].toString() )) ? -1 : 1;

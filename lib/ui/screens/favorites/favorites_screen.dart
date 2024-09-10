@@ -3,6 +3,7 @@ import 'package:flutter_riverpod/flutter_riverpod.dart';
 import 'dart:math' as math;
 
 import 'package:fraseapp/core/core.dart';
+import 'package:fraseapp/shared/shared.dart';
 import 'package:fraseapp/ui/screens/phrase/phrase_screen.dart';
 import 'package:go_router/go_router.dart';
 
@@ -244,13 +245,18 @@ class _CustomDismissibleFavorite extends ConsumerWidget {
     final bool isDarkMode = ref.watch( themeNotifierProvider ).isDarkMode;
 
     return Dismissible(
-      background: Container(color: Colors.white),
+      background: Container(
+        color: Colors.blue,
+        alignment: Alignment.centerLeft,
+        padding: const EdgeInsets.symmetric(horizontal: 10),
+        child: const Icon( Icons.share_outlined, color: Colors.white ),
+      ),
       secondaryBackground: Container(
         color: Colors.red,
         alignment: Alignment.centerRight,
         padding: const EdgeInsets.symmetric(horizontal: 10),
         child: const Icon( Icons.delete_outline, color: Colors.white ),
-      ),
+      ), 
       confirmDismiss:(direction) async {
         if ( direction == DismissDirection.endToStart ) {
           final response = await openDialogQuestionDeletePhrase(context, textStyles);
@@ -276,14 +282,16 @@ class _CustomDismissibleFavorite extends ConsumerWidget {
 
           }
           return response;
+        } else {
+          await toShare('"${favorite['phrase']}" ✍🏼 ${favorite['author']}');
+          return false;
         }
-        return false;
       },
       dismissThresholds: const {
-        DismissDirection.endToStart: 0.5
+        DismissDirection.endToStart: 0.5,
+        DismissDirection.startToEnd: 0.5,
       },
-      key: UniqueKey(), 
-      direction: DismissDirection.endToStart,
+      key: UniqueKey(),
       child: GestureDetector(
         onTap: ()  => openDialogPhrase(context, isDarkMode, colorsTheme),
         child: ListTile(

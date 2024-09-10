@@ -8,8 +8,8 @@ Future<void> openUrl( String url ) async {
 
 }
 
-void toShare( String text ) {
+Future<ShareResult> toShare( String text ) async  {
 
-  Share.share(text);
+  return await Share.share(text);
 
 }
