@@ -33,12 +33,12 @@ class ExploreScreenState extends ConsumerState<ExploreScreen> {
     ]);
   }
 
-  getImageAndPhraseInitial() async {
-
+  Future<void> getImageAndPhrase({bool randomPhrase = false}) async {
     try {
-
       isLoading = true;
-      final phraseData = await Phrase().getPhraseOfDay();
+      final phraseData = randomPhrase
+          ? await Phrase().getRandomPhrase()
+          : await Phrase().getPhraseOfDay();
       final image = await Images().getRandomImage();
       final Map<String, dynamic> phraseToJson = {
         'phrase': phraseData['phrase'],
@@ -48,19 +48,14 @@ class ExploreScreenState extends ConsumerState<ExploreScreen> {
       phrase = PhraseMapper.jsonToEntity(phraseToJson);
       isLoading = false;
       setState(() {});
-      
     } on CustomError catch (e) {
-
       isLoading = false;
       error = e.message;
       setState(() {});
-
     } catch (e) {
-
       isLoading = false;
       error = Errors.serverError;
       setState(() {});
-
     }
   }
 
@@ -79,21 +74,19 @@ class ExploreScreenState extends ConsumerState<ExploreScreen> {
   }
 
   /// reload data every time it is invoked
-  void reloadData({delayed = true}) async {
-
+  void reloadData({delayed = true, bool randomPhrase = false}) async {
     isLoading = true;
     setState(() {});
-    if ( delayed ) await Future.delayed(const Duration(seconds: 2));
-    getImageAndPhraseInitial();
+    if (delayed) await Future.delayed(const Duration(seconds: 2));
     error = Errors.none;
-    
+    getImageAndPhrase(randomPhrase: randomPhrase);
   }
 
   @override
   void initState() {
     super.initState();
     initializeQuickActions();
-    getImageAndPhraseInitial();
+    getImageAndPhrase();
     LocalNotifications.scheduleDailyNotification();
   }
 
@@ -115,7 +108,7 @@ class ExploreScreenState extends ConsumerState<ExploreScreen> {
     ? Scaffold(
       body: PhraseScreen(favorite: phrase!),
       floatingActionButton: FloatingActionButton(
-        onPressed: () => reloadData(delayed: false),
+        onPressed: () => reloadData(delayed: false, randomPhrase: true),
         backgroundColor: colorsTheme.primary,
         child: Icon( Icons.refresh_outlined, color: isDarkMode ? Colors.black : Colors.white ),
       ),

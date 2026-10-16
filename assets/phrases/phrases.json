@@ -1,0 +1,1462 @@
+﻿{
+  "1": {
+    "phrase": "¿Sabías que un terrón de azúcar hecho de material de estrella de neutrones pesaría unos mil millones de toneladas en la Tierra?",
+    "author": "Astronomía"
+  },
+  "2": {
+    "phrase": "¿Sabías que la luz en el vacío viaja a 299.792.458 metros por segundo, una velocidad fija por definición internacional?",
+    "author": "Física"
+  },
+  "3": {
+    "phrase": "¿Sabías que un rayo puede alcanzar unos 30.000 °C, unas cinco veces más que la superficie del Sol?",
+    "author": "Meteorología"
+  },
+  "4": {
+    "phrase": "¿Sabías que las abejas melíferas tienen cinco ojos: dos compuestos grandes y tres ocelos simples en la frente?",
+    "author": "Biología"
+  },
+  "5": {
+    "phrase": "¿Sabías que el Challenger Deep, en la fosa de las Marianas, supera los 10.900 metros de profundidad?",
+    "author": "Oceanografía"
+  },
+  "6": {
+    "phrase": "¿Sabías que las vacas tienen un estómago con cuatro compartimentos: rumen, retículo, omaso y abomaso?",
+    "author": "Biología"
+  },
+  "7": {
+    "phrase": "¿Sabías que los pulpos tienen tres corazones: dos bombean sangre a las branquias y uno al resto del cuerpo?",
+    "author": "Biología marina"
+  },
+  "8": {
+    "phrase": "¿Sabías que el agua es una de las pocas sustancias que se expande al congelarse, por eso el hielo flota?",
+    "author": "Química"
+  },
+  "9": {
+    "phrase": "¿Sabías que Venus es más caliente que Mercurio, aunque está más lejos del Sol, por su intenso efecto invernadero?",
+    "author": "Astronomía"
+  },
+  "10": {
+    "phrase": "¿Sabías que el cerebro humano consume cerca del 20% de la energía del cuerpo, pese a ser solo alrededor del 2% de su masa?",
+    "author": "Neurociencia"
+  },
+  "11": {
+    "phrase": "La lectura es una conversación con los hombres más ilustres de los siglos pasados.",
+    "author": "Descartes"
+  },
+  "12": {
+    "phrase": "Pienso, luego existo.",
+    "author": "Descartes"
+  },
+  "13": {
+    "phrase": "El que lee mucho y anda mucho, ve mucho y sabe mucho.",
+    "author": "Miguel de Cervantes"
+  },
+  "14": {
+    "phrase": "La pluma es la lengua de la mente.",
+    "author": "Miguel de Cervantes"
+  },
+  "15": {
+    "phrase": "No hay libro tan malo que no tenga algo bueno.",
+    "author": "Miguel de Cervantes"
+  },
+  "16": {
+    "phrase": "Somos el tiempo que nos queda.",
+    "author": "José Luis Sampedro"
+  },
+  "17": {
+    "phrase": "La vida no es la que uno vivió, sino la que uno recuerda y cómo la recuerda para contarla.",
+    "author": "Gabriel García Márquez"
+  },
+  "18": {
+    "phrase": "Nadie merece tus lágrimas, y quien las merezca no te hará llorar.",
+    "author": "Gabriel García Márquez"
+  },
+  "19": {
+    "phrase": "Uno no es de ninguna parte mientras no tenga un muerto bajo la tierra.",
+    "author": "Gabriel García Márquez"
+  },
+  "20": {
+    "phrase": "No hay nada más terrible que la ignorancia en acción.",
+    "author": "Johann Wolfgang von Goethe"
+  },
+  "21": {
+    "phrase": "Sea el cambio que quieres ver en el mundo.",
+    "author": "Mahatma Gandhi"
+  },
+  "22": {
+    "phrase": "La imaginación es más importante que el conocimiento.",
+    "author": "Albert Einstein"
+  },
+  "23": {
+    "phrase": "La vida es aquello que te va sucediendo mientras te empeñas en hacer otros planes.",
+    "author": "John Lennon"
+  },
+  "24": {
+    "phrase": "El verdadero viaje de descubrimiento no consiste en buscar nuevos paisajes, sino en tener nuevos ojos.",
+    "author": "Marcel Proust"
+  },
+  "25": {
+    "phrase": "Caemos para aprender a levantarnos.",
+    "author": "Pensamiento"
+  },
+  "26": {
+    "phrase": "¿Sabías que el ADN de todos los seres humanos es idéntico en cerca del 99,9%?",
+    "author": "Genética"
+  },
+  "27": {
+    "phrase": "¿Sabías que tu cuerpo tiene más bacterias que células humanas?",
+    "author": "Biología"
+  },
+  "28": {
+    "phrase": "¿Sabías que la Luna se aleja de la Tierra unos 3,8 centímetros cada año?",
+    "author": "Astronomía"
+  },
+  "29": {
+    "phrase": "¿Sabías que un día en Venus dura más que un año en Venus?",
+    "author": "Astronomía"
+  },
+  "30": {
+    "phrase": "¿Sabías que los delfines duermen con un hemisferio del cerebro a la vez?",
+    "author": "Biología marina"
+  },
+  "31": {
+    "phrase": "La felicidad no es un ideal de la razón, sino de la imaginación.",
+    "author": "Immanuel Kant"
+  },
+  "32": {
+    "phrase": "Atrévete a saber.",
+    "author": "Horacio"
+  },
+  "33": {
+    "phrase": "Solo sé que no sé nada.",
+    "author": "Sócrates"
+  },
+  "34": {
+    "phrase": "Una vida sin examen no merece ser vivida.",
+    "author": "Sócrates"
+  },
+  "35": {
+    "phrase": "El hombre es la medida de todas las cosas.",
+    "author": "Protágoras"
+  },
+  "36": {
+    "phrase": "Conócete a ti mismo.",
+    "author": "Templo de Apolo"
+  },
+  "37": {
+    "phrase": "La esperanza es lo último que se pierde.",
+    "author": "Proverbio"
+  },
+  "38": {
+    "phrase": "Quien tiene un porqué para vivir puede soportar casi cualquier cómo.",
+    "author": "Friedrich Nietzsche"
+  },
+  "39": {
+    "phrase": "Lo que no me mata me hace más fuerte.",
+    "author": "Friedrich Nietzsche"
+  },
+  "40": {
+    "phrase": "El hombre está condenado a ser libre.",
+    "author": "Jean-Paul Sartre"
+  },
+  "41": {
+    "phrase": "Somos lo que hacemos día a día; de modo que la excelencia no es un acto, sino un hábito.",
+    "author": "Aristóteles"
+  },
+  "42": {
+    "phrase": "La amistad es un alma que habita en dos cuerpos.",
+    "author": "Aristóteles"
+  },
+  "43": {
+    "phrase": "Educar la mente sin educar el corazón no es educar en absoluto.",
+    "author": "Aristóteles"
+  },
+  "44": {
+    "phrase": "El principio de la sabiduría es el temor de la ignorancia.",
+    "author": "Pensamiento"
+  },
+  "45": {
+    "phrase": "Lee y conducirás, no leas y serás conducido.",
+    "author": "Santa Teresa de Jesús"
+  },
+  "46": {
+    "phrase": "En un lugar de la Mancha, de cuyo nombre no quiero acordarme…",
+    "author": "Miguel de Cervantes"
+  },
+  "47": {
+    "phrase": "La libertad, Sancho, es uno de los más preciosos dones que a los hombres dieron los cielos.",
+    "author": "Miguel de Cervantes"
+  },
+  "48": {
+    "phrase": "Despacito y buena letra, que el hacer las cosas bien importa más que el hacerlas.",
+    "author": "Antonio Machado"
+  },
+  "49": {
+    "phrase": "Caminante, no hay camino, se hace camino al andar.",
+    "author": "Antonio Machado"
+  },
+  "50": {
+    "phrase": "Todo pasa y todo queda, pero lo nuestro es pasar.",
+    "author": "Antonio Machado"
+  },
+  "51": {
+    "phrase": "Podrán cortar todas las flores, pero no podrán detener la primavera.",
+    "author": "Pablo Neruda"
+  },
+  "52": {
+    "phrase": "Es tan corto el amor y tan largo el olvido.",
+    "author": "Pablo Neruda"
+  },
+  "53": {
+    "phrase": "Me gustas cuando callas porque estás como ausente.",
+    "author": "Pablo Neruda"
+  },
+  "54": {
+    "phrase": "La poesía es un arma cargada de futuro.",
+    "author": "Gabriel Celaya"
+  },
+  "55": {
+    "phrase": "Quien no entiende una mirada tampoco entenderá una larga explicación.",
+    "author": "Proverbio árabe"
+  },
+  "56": {
+    "phrase": "¿Sabías que el corazón late unas 100.000 veces al día?",
+    "author": "Anatomía"
+  },
+  "57": {
+    "phrase": "¿Sabías que los huesos son más fuertes que el concreto de igual peso?",
+    "author": "Anatomía"
+  },
+  "58": {
+    "phrase": "¿Sabías que Júpiter tiene más de 90 lunas conocidas?",
+    "author": "Astronomía"
+  },
+  "59": {
+    "phrase": "¿Sabías que un año en Neptuno equivale a unos 165 años terrestres?",
+    "author": "Astronomía"
+  },
+  "60": {
+    "phrase": "¿Sabías que el sonido no viaja en el vacío del espacio?",
+    "author": "Física"
+  },
+  "61": {
+    "phrase": "La belleza salvará al mundo.",
+    "author": "Fiódor Dostoyevski"
+  },
+  "62": {
+    "phrase": "Si quieres ser feliz toda la vida, ama lo que haces.",
+    "author": "Pensamiento"
+  },
+  "63": {
+    "phrase": "El que tiene imaginación sin aprendizaje tiene alas y no tiene pies.",
+    "author": "Joseph Joubert"
+  },
+  "64": {
+    "phrase": "La perseverancia es más poderosa que la fuerza.",
+    "author": "Pensamiento"
+  },
+  "65": {
+    "phrase": "No cuentes los días, haz que los días cuenten.",
+    "author": "Muhammad Ali"
+  },
+  "66": {
+    "phrase": "El éxito es ir de fracaso en fracaso sin perder el entusiasmo.",
+    "author": "Winston Churchill"
+  },
+  "67": {
+    "phrase": "La mejor manera de predecir el futuro es creándolo.",
+    "author": "Peter Drucker"
+  },
+  "68": {
+    "phrase": "Haz de tu vida un sueño, y de tu sueño una realidad.",
+    "author": "Antoine de Saint-Exupéry"
+  },
+  "69": {
+    "phrase": "Lo esencial es invisible a los ojos.",
+    "author": "Antoine de Saint-Exupéry"
+  },
+  "70": {
+    "phrase": "Solo se ve bien con el corazón.",
+    "author": "Antoine de Saint-Exupéry"
+  },
+  "71": {
+    "phrase": "Todos los adultos fueron primero niños, aunque pocos lo recuerdan.",
+    "author": "Antoine de Saint-Exupéry"
+  },
+  "72": {
+    "phrase": "El tiempo es el mejor autor: siempre encuentra un final perfecto.",
+    "author": "Pensamiento"
+  },
+  "73": {
+    "phrase": "Escribe para que el alma tenga un hogar.",
+    "author": "Literatura"
+  },
+  "74": {
+    "phrase": "Un libro abierto es un cerebro que habla; cerrado, un amigo que espera.",
+    "author": "Proverbio"
+  },
+  "75": {
+    "phrase": "La literatura es el arte de descubrir algo extraordinario sobre gente ordinaria.",
+    "author": "Boris Pasternak"
+  },
+  "76": {
+    "phrase": "¿Sabías que las ballenas azules pueden medir más de 25 metros de longitud?",
+    "author": "Biología marina"
+  },
+  "77": {
+    "phrase": "¿Sabías que el bambú puede crecer varios centímetros en un solo día?",
+    "author": "Botánica"
+  },
+  "78": {
+    "phrase": "¿Sabías que los árboles se comunican a través de redes de hongos bajo el suelo?",
+    "author": "Ecología"
+  },
+  "79": {
+    "phrase": "¿Sabías que el diamante y el grafito están hechos ambos de carbono?",
+    "author": "Química"
+  },
+  "80": {
+    "phrase": "¿Sabías que la sangre de las langostas es azul por la hemocianina?",
+    "author": "Biología marina"
+  },
+  "81": {
+    "phrase": "Sueña como si fueras a vivir para siempre; vive como si fueras a morir hoy.",
+    "author": "James Dean"
+  },
+  "82": {
+    "phrase": "La suerte favorece a la mente preparada.",
+    "author": "Louis Pasteur"
+  },
+  "83": {
+    "phrase": "Nada en la vida debe temerse, solo comprenderse.",
+    "author": "Marie Curie"
+  },
+  "84": {
+    "phrase": "En la ciencia, el crédito va a quien convence al mundo, no a quien tuvo la idea primero.",
+    "author": "Francis Darwin"
+  },
+  "85": {
+    "phrase": "La duda es el principio de la sabiduría.",
+    "author": "Aristóteles"
+  },
+  "86": {
+    "phrase": "El silencio es un amigo que nunca traiciona.",
+    "author": "Confucio"
+  },
+  "87": {
+    "phrase": "Elige un trabajo que te guste y no tendrás que trabajar ni un día de tu vida.",
+    "author": "Confucio"
+  },
+  "88": {
+    "phrase": "El viaje de mil millas comienza con un solo paso.",
+    "author": "Lao-Tsé"
+  },
+  "89": {
+    "phrase": "Cuando estoy triste, leo para no pensar; cuando estoy contento, leo para no olvidar.",
+    "author": "Literatura"
+  },
+  "90": {
+    "phrase": "Hay quienes miran durante años y no ven nada.",
+    "author": "Pensamiento"
+  },
+  "91": {
+    "phrase": "La memoria es el diario que todos llevamos con nosotros.",
+    "author": "Oscar Wilde"
+  },
+  "92": {
+    "phrase": "Sé tú mismo; los demás puestos ya están ocupados.",
+    "author": "Oscar Wilde"
+  },
+  "93": {
+    "phrase": "Vivimos todos bajo el mismo cielo, pero no todos tenemos el mismo horizonte.",
+    "author": "Konrad Adenauer"
+  },
+  "94": {
+    "phrase": "La educación es el arma más poderosa que puedes usar para cambiar el mundo.",
+    "author": "Nelson Mandela"
+  },
+  "95": {
+    "phrase": "Nunca es demasiado tarde para ser lo que podrías haber sido.",
+    "author": "George Eliot"
+  },
+  "96": {
+    "phrase": "¿Sabías que Marte tiene el volcán más alto del sistema solar, el Olympus Mons?",
+    "author": "Astronomía"
+  },
+  "97": {
+    "phrase": "¿Sabías que Saturno podría flotar en agua porque su densidad media es menor que la del agua?",
+    "author": "Astronomía"
+  },
+  "98": {
+    "phrase": "¿Sabías que el Sol representa más del 99% de la masa del sistema solar?",
+    "author": "Astronomía"
+  },
+  "99": {
+    "phrase": "¿Sabías que un eclipse total de Sol puede oscurecer el día durante unos minutos?",
+    "author": "Astronomía"
+  },
+  "100": {
+    "phrase": "¿Sabías que la Vía Láctea contiene cientos de miles de millones de estrellas?",
+    "author": "Astronomía"
+  },
+  "101": {
+    "phrase": "Yo soy yo y mi circunstancia.",
+    "author": "José Ortega y Gasset"
+  },
+  "102": {
+    "phrase": "La claridad es la cortesía del filósofo.",
+    "author": "José Ortega y Gasset"
+  },
+  "103": {
+    "phrase": "El hombre no tiene naturaleza, sino historia.",
+    "author": "José Ortega y Gasset"
+  },
+  "104": {
+    "phrase": "Vivir es constantemente decidir lo que vamos a ser.",
+    "author": "José Ortega y Gasset"
+  },
+  "105": {
+    "phrase": "La cultura es lo que queda cuando se ha olvidado todo lo que se aprendió.",
+    "author": "Édouard Herriot"
+  },
+  "106": {
+    "phrase": "Un pueblo sin memoria es un pueblo sin futuro.",
+    "author": "Pensamiento"
+  },
+  "107": {
+    "phrase": "Las palabras son, por supuesto, la más poderosa droga usada por la humanidad.",
+    "author": "Rudyard Kipling"
+  },
+  "108": {
+    "phrase": "Hablar es una necesidad; callar, un arte.",
+    "author": "Johann Wolfgang von Goethe"
+  },
+  "109": {
+    "phrase": "Hay una fuerza motriz más poderosa que el vapor, la electricidad y la energía atómica: la voluntad.",
+    "author": "Albert Einstein"
+  },
+  "110": {
+    "phrase": "La lógica te llevará de A a B. La imaginación te llevará a todas partes.",
+    "author": "Albert Einstein"
+  },
+  "111": {
+    "phrase": "No pretendas que las cosas cambien si siempre haces lo mismo.",
+    "author": "Albert Einstein"
+  },
+  "112": {
+    "phrase": "La creatividad es la inteligencia divirtiéndose.",
+    "author": "Albert Einstein"
+  },
+  "113": {
+    "phrase": "¿Sabías que el colibrí puede batir las alas más de 50 veces por segundo?",
+    "author": "Biología"
+  },
+  "114": {
+    "phrase": "¿Sabías que los tiburones existen desde antes que los dinosaurios?",
+    "author": "Paleontología"
+  },
+  "115": {
+    "phrase": "¿Sabías que una medusa puede ser casi toda agua y aun así picar?",
+    "author": "Biología marina"
+  },
+  "116": {
+    "phrase": "¿Sabías que el camaleón cambia de color principalmente por temperatura y humor, no solo para camuflarse?",
+    "author": "Biología"
+  },
+  "117": {
+    "phrase": "¿Sabías que las hormigas pueden levantar objetos muchas veces más pesados que ellas?",
+    "author": "Biología"
+  },
+  "118": {
+    "phrase": "El que lee vive mil vidas antes de morir.",
+    "author": "George R. R. Martin"
+  },
+  "119": {
+    "phrase": "Un lector vive mil vidas. Quien nunca lee vive solo una.",
+    "author": "George R. R. Martin"
+  },
+  "120": {
+    "phrase": "Los libros son espejos: solo se ve en ellos lo que uno ya lleva dentro.",
+    "author": "Carlos Ruiz Zafón"
+  },
+  "121": {
+    "phrase": "Cada libro, cada volumen que ves, tiene alma.",
+    "author": "Carlos Ruiz Zafón"
+  },
+  "122": {
+    "phrase": "La literatura es la pregunta menos la respuesta.",
+    "author": "Roland Barthes"
+  },
+  "123": {
+    "phrase": "Escribir es una forma de terapia.",
+    "author": "Literatura"
+  },
+  "124": {
+    "phrase": "Las historias nos hacen humanos.",
+    "author": "Pensamiento"
+  },
+  "125": {
+    "phrase": "Un poema debe ser una fiesta de la inteligencia.",
+    "author": "Vicente Huidobro"
+  },
+  "126": {
+    "phrase": "La poesía no quiere adeptos: quiere amantes.",
+    "author": "Federico García Lorca"
+  },
+  "127": {
+    "phrase": "Verde que te quiero verde.",
+    "author": "Federico García Lorca"
+  },
+  "128": {
+    "phrase": "El artista es un receptáculo de emociones venidas de cualquier lugar.",
+    "author": "Pablo Picasso"
+  },
+  "129": {
+    "phrase": "Todo lo que puedas imaginar es real.",
+    "author": "Pablo Picasso"
+  },
+  "130": {
+    "phrase": "La inspiración existe, pero tiene que encontrarte trabajando.",
+    "author": "Pablo Picasso"
+  },
+  "131": {
+    "phrase": "¿Sabías que el Everest mide unos 8.849 metros sobre el nivel del mar?",
+    "author": "Geografía"
+  },
+  "132": {
+    "phrase": "¿Sabías que el desierto del Sahara es más grande que muchos países juntos?",
+    "author": "Geografía"
+  },
+  "133": {
+    "phrase": "¿Sabías que el Amazonas descarga más agua dulce al océano que cualquier otro río?",
+    "author": "Geografía"
+  },
+  "134": {
+    "phrase": "¿Sabías que Islandia crece unos centímetros al año por la separación de placas tectónicas?",
+    "author": "Geología"
+  },
+  "135": {
+    "phrase": "¿Sabías que el núcleo interno de la Tierra es principalmente hierro sólido?",
+    "author": "Geología"
+  },
+  "136": {
+    "phrase": "La verdadera generosidad hacia el futuro consiste en darlo todo al presente.",
+    "author": "Albert Camus"
+  },
+  "137": {
+    "phrase": "En medio del invierno, aprendí por fin que había en mí un verano invencible.",
+    "author": "Albert Camus"
+  },
+  "138": {
+    "phrase": "No camines delante de mí, puede que no te siga. No camines detrás, puede que no te guíe. Camina a mi lado y sé mi amigo.",
+    "author": "Albert Camus"
+  },
+  "139": {
+    "phrase": "La libertad es lo que haces con lo que te han hecho.",
+    "author": "Jean-Paul Sartre"
+  },
+  "140": {
+    "phrase": "El infierno son los otros.",
+    "author": "Jean-Paul Sartre"
+  },
+  "141": {
+    "phrase": "No es más rico quien más tiene, sino quien menos necesita.",
+    "author": "San Agustín"
+  },
+  "142": {
+    "phrase": "La paciencia es amarga, pero su fruto es dulce.",
+    "author": "Jean-Jacques Rousseau"
+  },
+  "143": {
+    "phrase": "El hombre nace libre, y por todas partes se encuentra encadenado.",
+    "author": "Jean-Jacques Rousseau"
+  },
+  "144": {
+    "phrase": "Piensa mal y acertarás, dice el refrán; piensa bien y vivirás mejor.",
+    "author": "Pensamiento"
+  },
+  "145": {
+    "phrase": "La cortesía es al espíritu lo que la belleza al rostro.",
+    "author": "Voltaire"
+  },
+  "146": {
+    "phrase": "El trabajo aleja de nosotros tres grandes males: el aburrimiento, el vicio y la necesidad.",
+    "author": "Voltaire"
+  },
+  "147": {
+    "phrase": "Dudo, luego pienso; pienso, luego existo.",
+    "author": "Pensamiento"
+  },
+  "148": {
+    "phrase": "¿Sabías que el ojo humano puede distinguir millones de colores distintos?",
+    "author": "Anatomía"
+  },
+  "149": {
+    "phrase": "¿Sabías que bostezar ayuda a enfriar el cerebro y a mantenerte alerta?",
+    "author": "Neurociencia"
+  },
+  "150": {
+    "phrase": "¿Sabías que el estómago se renueva su revestimiento cada pocos días para no digerirse a sí mismo?",
+    "author": "Anatomía"
+  },
+  "151": {
+    "phrase": "Ser o no ser, esa es la cuestión.",
+    "author": "William Shakespeare"
+  },
+  "152": {
+    "phrase": "El mundo entero es un escenario.",
+    "author": "William Shakespeare"
+  },
+  "153": {
+    "phrase": "Amar es un acto de interminable perdón.",
+    "author": "Pensamiento"
+  },
+  "154": {
+    "phrase": "Donde hay una voluntad, hay un camino.",
+    "author": "Proverbio"
+  },
+  "155": {
+    "phrase": "El conocimiento habla, pero la sabiduría escucha.",
+    "author": "Jimi Hendrix"
+  },
+  "156": {
+    "phrase": "La simplicidad es la máxima sofisticación.",
+    "author": "Leonardo da Vinci"
+  },
+  "157": {
+    "phrase": "El aprendizaje nunca agota la mente.",
+    "author": "Leonardo da Vinci"
+  },
+  "158": {
+    "phrase": "Obstáculos no pueden aplastarme; cada obstáculo cede ante la firme resolución.",
+    "author": "Leonardo da Vinci"
+  },
+  "159": {
+    "phrase": "La pintura es poesía muda; la poesía, pintura ciega.",
+    "author": "Leonardo da Vinci"
+  },
+  "160": {
+    "phrase": "Quien no valora la vida no se la merece.",
+    "author": "Leonardo da Vinci"
+  },
+  "161": {
+    "phrase": "Borges decía que el paraíso, en cierta forma, tenía que ser una biblioteca.",
+    "author": "Jorge Luis Borges"
+  },
+  "162": {
+    "phrase": "Nadie rebaje a lágrima o reproche esta declaración de la maestría de Dios.",
+    "author": "Jorge Luis Borges"
+  },
+  "163": {
+    "phrase": "He cometido el peor de los pecados que un hombre puede cometer. No he sido feliz.",
+    "author": "Jorge Luis Borges"
+  },
+  "164": {
+    "phrase": "Uno no es lo que es por lo que escribe, sino por lo que ha leído.",
+    "author": "Jorge Luis Borges"
+  },
+  "165": {
+    "phrase": "El tiempo es la sustancia de que estoy hecho.",
+    "author": "Jorge Luis Borges"
+  },
+  "166": {
+    "phrase": "¿Sabías que el café es una de las bebidas más consumidas del mundo después del agua?",
+    "author": "Cultura"
+  },
+  "167": {
+    "phrase": "¿Sabías que el chocolate proviene del cacao, un fruto tropical?",
+    "author": "Botánica"
+  },
+  "168": {
+    "phrase": "¿Sabías que las papas fueron domesticadas primero en los Andes?",
+    "author": "Historia"
+  },
+  "169": {
+    "phrase": "¿Sabías que el cero como número llegó a Europa desde la India a través del mundo árabe?",
+    "author": "Matemáticas"
+  },
+  "170": {
+    "phrase": "¿Sabías que el número π es infinito y no periódico?",
+    "author": "Matemáticas"
+  },
+  "171": {
+    "phrase": "La poesía es el eco que pregunta a una sombra bailar.",
+    "author": "Carl Sandburg"
+  },
+  "172": {
+    "phrase": "Escribir es fácil: solo hay que mirar el papel hasta que te salga sangre de la frente.",
+    "author": "Gene Fowler"
+  },
+  "173": {
+    "phrase": "Un escritor es alguien para quien escribir es más difícil que para otras personas.",
+    "author": "Thomas Mann"
+  },
+  "174": {
+    "phrase": "La literatura es la memoria de la humanidad.",
+    "author": "Literatura"
+  },
+  "175": {
+    "phrase": "Sin libros, la historia guardaría silencio.",
+    "author": "Pensamiento"
+  },
+  "176": {
+    "phrase": "El que abre un libro cierra una prisión.",
+    "author": "Proverbio"
+  },
+  "177": {
+    "phrase": "Leer es soñar con los ojos abiertos.",
+    "author": "Pensamiento"
+  },
+  "178": {
+    "phrase": "Las palabras pueden iluminar más que mil faroles.",
+    "author": "Literatura"
+  },
+  "179": {
+    "phrase": "Un verso puede salvar un día.",
+    "author": "Literatura"
+  },
+  "180": {
+    "phrase": "La belleza está en los ojos de quien mira.",
+    "author": "Proverbio"
+  },
+  "181": {
+    "phrase": "¿Sabías que el helicóptero se inspiró en ideas de Leonardo da Vinci sobre el vuelo?",
+    "author": "Historia"
+  },
+  "182": {
+    "phrase": "¿Sabías que la tipografía Gutenberg impulsó la difusión masiva de libros en Europa?",
+    "author": "Historia"
+  },
+  "183": {
+    "phrase": "¿Sabías que el alfabeto latino deriva, en última instancia, de escrituras semíticas antiguas?",
+    "author": "Lingüística"
+  },
+  "184": {
+    "phrase": "¿Sabías que el español es una lengua romance descendiente del latín vulgar?",
+    "author": "Lingüística"
+  },
+  "185": {
+    "phrase": "¿Sabías que el Quijote se publicó por primera vez en 1605?",
+    "author": "Literatura"
+  },
+  "186": {
+    "phrase": "Vivir sin filosofar es, propiamente, tener los ojos cerrados.",
+    "author": "Descartes"
+  },
+  "187": {
+    "phrase": "El hombre es un animal político.",
+    "author": "Aristóteles"
+  },
+  "188": {
+    "phrase": "La justicia es dar a cada uno lo suyo.",
+    "author": "Ulpiano"
+  },
+  "189": {
+    "phrase": "La verdad os hará libres.",
+    "author": "Evangelio de Juan"
+  },
+  "190": {
+    "phrase": "Ama y haz lo que quieras.",
+    "author": "San Agustín"
+  },
+  "191": {
+    "phrase": "La fe mueve montañas, pero el trabajo las aplana.",
+    "author": "Pensamiento"
+  },
+  "192": {
+    "phrase": "No hay caminos para la paz; la paz es el camino.",
+    "author": "Mahatma Gandhi"
+  },
+  "193": {
+    "phrase": "La debilidad de la actitud se convierte en debilidad de carácter.",
+    "author": "Albert Einstein"
+  },
+  "194": {
+    "phrase": "Intenta no volverte un hombre de éxito, sino un hombre de valor.",
+    "author": "Albert Einstein"
+  },
+  "195": {
+    "phrase": "La vida es como montar en bicicleta: para mantener el equilibrio debes seguir moviéndote.",
+    "author": "Albert Einstein"
+  },
+  "196": {
+    "phrase": "¿Sabías que el helio se descubrió primero en el Sol, antes que en la Tierra?",
+    "author": "Química"
+  },
+  "197": {
+    "phrase": "¿Sabías que el oro se puede martillar en láminas tan finas que se vuelven translúcidas?",
+    "author": "Química"
+  },
+  "198": {
+    "phrase": "¿Sabías que el vidrio, a escala humana, se comporta como un sólido rígido, no como un líquido que fluye?",
+    "author": "Química"
+  },
+  "199": {
+    "phrase": "¿Sabías que el ozono en la estratosfera nos protege de gran parte de la radiación ultravioleta?",
+    "author": "Química"
+  },
+  "200": {
+    "phrase": "¿Sabías que el agua caliente puede congelarse más rápido que la fría en ciertas condiciones? Se llama efecto Mpemba.",
+    "author": "Física"
+  },
+  "201": {
+    "phrase": "La esperanza es el sueño del hombre despierto.",
+    "author": "Aristóteles"
+  },
+  "202": {
+    "phrase": "El sabio no dice todo lo que piensa, pero siempre piensa todo lo que dice.",
+    "author": "Aristóteles"
+  },
+  "203": {
+    "phrase": "La excelencia no es un acto, sino un hábito.",
+    "author": "Aristóteles"
+  },
+  "204": {
+    "phrase": "El alma nunca piensa sin una imagen.",
+    "author": "Aristóteles"
+  },
+  "205": {
+    "phrase": "Somos enanos a hombros de gigantes.",
+    "author": "Bernardo de Chartres"
+  },
+  "206": {
+    "phrase": "El que no conoce la historia está condenado a repetirla.",
+    "author": "George Santayana"
+  },
+  "207": {
+    "phrase": "La historia es un conjunto de mentiras sobre las que se ha llegado a un acuerdo.",
+    "author": "Napoleón Bonaparte"
+  },
+  "208": {
+    "phrase": "La imaginación gobierna al mundo.",
+    "author": "Napoleón Bonaparte"
+  },
+  "209": {
+    "phrase": "Imposible no es una palabra francesa.",
+    "author": "Napoleón Bonaparte"
+  },
+  "210": {
+    "phrase": "La victoria pertenece al más perseverante.",
+    "author": "Napoleón Bonaparte"
+  },
+  "211": {
+    "phrase": "¿Sabías que el reloj atómico usa oscilaciones de átomos para medir el tiempo con enorme precisión?",
+    "author": "Física"
+  },
+  "212": {
+    "phrase": "¿Sabías que GPS corrige el tiempo usando relatividad porque los satélites sienten la gravedad de forma distinta?",
+    "author": "Física"
+  },
+  "213": {
+    "phrase": "¿Sabías que un fotón no tiene masa en reposo?",
+    "author": "Física"
+  },
+  "214": {
+    "phrase": "¿Sabías que el vacío cuántico no está realmente vacío: hay fluctuaciones de energía?",
+    "author": "Física"
+  },
+  "215": {
+    "phrase": "¿Sabías que el gato de Schrödinger es un experimento mental, no un experimento real con animales?",
+    "author": "Física"
+  },
+  "216": {
+    "phrase": "La poesía es la música del alma.",
+    "author": "Voltaire"
+  },
+  "217": {
+    "phrase": "Escribir es el paisaje de la mente.",
+    "author": "Literatura"
+  },
+  "218": {
+    "phrase": "Cada palabra que escribimos deja una huella.",
+    "author": "Literatura"
+  },
+  "219": {
+    "phrase": "Un buen libro es un amigo que nunca falla.",
+    "author": "Proverbio"
+  },
+  "220": {
+    "phrase": "Lee, no para contradecir ni para creer, sino para sopesar y considerar.",
+    "author": "Francis Bacon"
+  },
+  "221": {
+    "phrase": "El conocimiento es poder.",
+    "author": "Francis Bacon"
+  },
+  "222": {
+    "phrase": "La naturaleza, para ser comandada, debe ser obedecida.",
+    "author": "Francis Bacon"
+  },
+  "223": {
+    "phrase": "Algunos libros se prueban, otros se tragan, y unos pocos se mastican y digieren.",
+    "author": "Francis Bacon"
+  },
+  "224": {
+    "phrase": "La verdad es hija del tiempo, no de la autoridad.",
+    "author": "Francis Bacon"
+  },
+  "225": {
+    "phrase": "¿Sabías que las placas tectónicas se mueven unos pocos centímetros al año, como crece una uña?",
+    "author": "Geología"
+  },
+  "226": {
+    "phrase": "¿Sabías que los fósiles nos cuentan la historia de la vida a lo largo de millones de años?",
+    "author": "Paleontología"
+  },
+  "227": {
+    "phrase": "¿Sabías que el ámbar puede conservar insectos de hace decenas de millones de años?",
+    "author": "Paleontología"
+  },
+  "228": {
+    "phrase": "¿Sabías que el Tiranosaurio rex vivió al final del Cretácico, no con los primeros dinosaurios?",
+    "author": "Paleontología"
+  },
+  "229": {
+    "phrase": "¿Sabías que las aves son los únicos dinosaurios que sobrevivieron hasta hoy?",
+    "author": "Paleontología"
+  },
+  "230": {
+    "phrase": "¿Sabías que el trilobites fue uno de los animales más comunes de los mares antiguos?",
+    "author": "Paleontología"
+  },
+  "231": {
+    "phrase": "La felicidad depende de nosotros mismos.",
+    "author": "Aristóteles"
+  },
+  "232": {
+    "phrase": "El hábito es una segunda naturaleza.",
+    "author": "Aristóteles"
+  },
+  "233": {
+    "phrase": "El principio es la mitad de todo.",
+    "author": "Aristóteles"
+  },
+  "234": {
+    "phrase": "La esperanza es un despertar del espíritu.",
+    "author": "Pensamiento"
+  },
+  "235": {
+    "phrase": "Sé breve, que el alma se cansa de lo largo.",
+    "author": "Pensamiento"
+  },
+  "236": {
+    "phrase": "Hablar poco y bien es saber, hablar mucho y mal es necedad.",
+    "author": "Proverbio"
+  },
+  "237": {
+    "phrase": "Más vale tarde que nunca.",
+    "author": "Proverbio"
+  },
+  "238": {
+    "phrase": "No dejes para mañana lo que puedas hacer hoy.",
+    "author": "Proverbio"
+  },
+  "239": {
+    "phrase": "El que mucho abarca poco aprieta.",
+    "author": "Proverbio"
+  },
+  "240": {
+    "phrase": "A quien madruga, Dios le ayuda.",
+    "author": "Proverbio"
+  },
+  "241": {
+    "phrase": "¿Sabías que dormir ayuda a consolidar recuerdos en el cerebro?",
+    "author": "Neurociencia"
+  },
+  "242": {
+    "phrase": "¿Sabías que practicar un instrumento puede cambiar conexiones cerebrales con el tiempo?",
+    "author": "Neurociencia"
+  },
+  "243": {
+    "phrase": "¿Sabías que el hipocampo es clave para formar nuevos recuerdos?",
+    "author": "Neurociencia"
+  },
+  "244": {
+    "phrase": "¿Sabías que la dopamina participa en la motivación y la recompensa?",
+    "author": "Neurociencia"
+  },
+  "245": {
+    "phrase": "¿Sabías que el cerebro usa alrededor de 20 vatios de potencia, como una bombilla tenue?",
+    "author": "Neurociencia"
+  },
+  "246": {
+    "phrase": "La música es el lenguaje de las emociones.",
+    "author": "Immanuel Kant"
+  },
+  "247": {
+    "phrase": "Donde las palabras fallan, habla la música.",
+    "author": "Hans Christian Andersen"
+  },
+  "248": {
+    "phrase": "Sin música, la vida sería un error.",
+    "author": "Friedrich Nietzsche"
+  },
+  "249": {
+    "phrase": "La música expresa lo que no puede decirse con palabras.",
+    "author": "Víctor Hugo"
+  },
+  "250": {
+    "phrase": "La música es para el alma lo que la gimnasia para el cuerpo.",
+    "author": "Platón"
+  },
+  "251": {
+    "phrase": "El que tiene un porqué encuentra un cómo.",
+    "author": "Pensamiento"
+  },
+  "252": {
+    "phrase": "Caer está permitido; levantarse es obligatorio.",
+    "author": "Proverbio ruso"
+  },
+  "253": {
+    "phrase": "La disciplina es el puente entre metas y logros.",
+    "author": "Jim Rohn"
+  },
+  "254": {
+    "phrase": "Hazlo, o no lo hagas, pero no lo intentes.",
+    "author": "Yoda"
+  },
+  "255": {
+    "phrase": "El miedo es el camino hacia el lado oscuro.",
+    "author": "Yoda"
+  },
+  "256": {
+    "phrase": "¿Sabías que la Tierra tarda unos 365,25 días en orbitar el Sol? Por eso existen los años bisiestos.",
+    "author": "Astronomía"
+  },
+  "257": {
+    "phrase": "¿Sabías que la Tierra gira sobre su eje a más de 1.600 km/h en el ecuador?",
+    "author": "Astronomía"
+  },
+  "258": {
+    "phrase": "¿Sabías que sin la atmósfera el cielo diurno no se vería azul?",
+    "author": "Física"
+  },
+  "259": {
+    "phrase": "¿Sabías que el arcoíris aparece cuando la luz se refracta y refleja en gotas de agua?",
+    "author": "Física"
+  },
+  "260": {
+    "phrase": "¿Sabías que la luz polarizada vibra en un plano preferente y eso usan gafas de sol y pantallas LCD?",
+    "author": "Física"
+  },
+  "261": {
+    "phrase": "La literatura añade realidad a la vida.",
+    "author": "Pensamiento"
+  },
+  "262": {
+    "phrase": "Un poema es una pintura hecha de palabras.",
+    "author": "Literatura"
+  },
+  "263": {
+    "phrase": "Las metáforas son puentes entre lo conocido y lo nuevo.",
+    "author": "Literatura"
+  },
+  "264": {
+    "phrase": "Contar historias es la forma más antigua de enseñar.",
+    "author": "Pensamiento"
+  },
+  "265": {
+    "phrase": "El mito es una verdad que nunca sucedió y siempre sucede.",
+    "author": "Pensamiento"
+  },
+  "266": {
+    "phrase": "Homero dio a los griegos sus dioses; los dioses dieron a Homero su poesía.",
+    "author": "Literatura"
+  },
+  "267": {
+    "phrase": "La Odisea es el viaje de regreso; la Ilíada, el de la guerra.",
+    "author": "Homero"
+  },
+  "268": {
+    "phrase": "Canta, diosa, la cólera de Aquiles…",
+    "author": "Homero"
+  },
+  "269": {
+    "phrase": "Cuéntame, Musa, la historia del hombre de muchos recursos…",
+    "author": "Homero"
+  },
+  "270": {
+    "phrase": "El viaje importa tanto como el destino.",
+    "author": "Pensamiento"
+  },
+  "271": {
+    "phrase": "¿Sabías que el coral es un animal, no una planta?",
+    "author": "Biología marina"
+  },
+  "272": {
+    "phrase": "¿Sabías que los pingüinos son aves que no vuelan, pero nadan con gran habilidad?",
+    "author": "Biología"
+  },
+  "273": {
+    "phrase": "¿Sabías que el koala duerme gran parte del día por la baja energía de su dieta de eucalipto?",
+    "author": "Biología"
+  },
+  "274": {
+    "phrase": "¿Sabías que el ornitorrinco pone huevos aunque es un mamífero?",
+    "author": "Biología"
+  },
+  "275": {
+    "phrase": "¿Sabías que las jirafas tienen la misma cantidad de vértebras cervicales que los humanos: siete?",
+    "author": "Biología"
+  },
+  "276": {
+    "phrase": "El silencio también es una respuesta.",
+    "author": "Pensamiento"
+  },
+  "277": {
+    "phrase": "A veces callar es la forma más elocuente de hablar.",
+    "author": "Pensamiento"
+  },
+  "278": {
+    "phrase": "La empatía es ver con los ojos de otro, oír con sus oídos y sentir con su corazón.",
+    "author": "Alfred Adler"
+  },
+  "279": {
+    "phrase": "Trata a los demás como te gustaría que te trataran a ti.",
+    "author": "Regla de oro"
+  },
+  "280": {
+    "phrase": "La amabilidad es un lenguaje que el sordo puede oír y el ciego puede ver.",
+    "author": "Mark Twain"
+  },
+  "281": {
+    "phrase": "El coraje no es la ausencia de miedo, sino el triunfo sobre él.",
+    "author": "Nelson Mandela"
+  },
+  "282": {
+    "phrase": "Parece siempre imposible hasta que se hace.",
+    "author": "Nelson Mandela"
+  },
+  "283": {
+    "phrase": "La educación es el gran motor del desarrollo personal.",
+    "author": "Nelson Mandela"
+  },
+  "284": {
+    "phrase": "Perdonar no es olvidar; es soltar el peso.",
+    "author": "Pensamiento"
+  },
+  "285": {
+    "phrase": "La gratitud convierte lo que tenemos en suficiente.",
+    "author": "Pensamiento"
+  },
+  "286": {
+    "phrase": "¿Sabías que el telescopio James Webb observa el universo en infrarrojo?",
+    "author": "Astronomía"
+  },
+  "287": {
+    "phrase": "¿Sabías que la luz de la estrella más cercana, Próxima Centauri, tarda más de 4 años en llegar?",
+    "author": "Astronomía"
+  },
+  "288": {
+    "phrase": "¿Sabías que hay más estrellas en el universo observable que granos de arena en todas las playas de la Tierra? Es una estimación frecuente.",
+    "author": "Astronomía"
+  },
+  "289": {
+    "phrase": "¿Sabías que una supernova puede brillar más que una galaxia entera durante un tiempo?",
+    "author": "Astronomía"
+  },
+  "290": {
+    "phrase": "¿Sabías que los agujeros negros no «chupan» todo a su alrededor: solo lo que cruza el horizonte de eventos?",
+    "author": "Astronomía"
+  },
+  "291": {
+    "phrase": "Escribe tu vida como quieres recordarla.",
+    "author": "Pensamiento"
+  },
+  "292": {
+    "phrase": "Hoy es un buen día para empezar un capítulo nuevo.",
+    "author": "Pensamiento"
+  },
+  "293": {
+    "phrase": "Las páginas en blanco también forman parte del libro.",
+    "author": "Literatura"
+  },
+  "294": {
+    "phrase": "Un final es solo el comienzo de otra historia.",
+    "author": "Literatura"
+  },
+  "295": {
+    "phrase": "Los personajes de un libro viven mientras alguien los lea.",
+    "author": "Literatura"
+  },
+  "296": {
+    "phrase": "La biblioteca es un hospital para el espíritu.",
+    "author": "Pensamiento"
+  },
+  "297": {
+    "phrase": "Coleccionar libros no es lo mismo que leerlos; pero ambos pueden ser hermosos.",
+    "author": "Literatura"
+  },
+  "298": {
+    "phrase": "Subraya lo que te mueve; deja pasar lo que no.",
+    "author": "Literatura"
+  },
+  "299": {
+    "phrase": "Releer es descubrir un libro nuevo en el mismo libro.",
+    "author": "Literatura"
+  },
+  "300": {
+    "phrase": "Un buen título invita; un buen final permanece.",
+    "author": "Literatura"
+  },
+  "301": {
+    "phrase": "¿Sabías que el número de Avogadro describe cuántas partículas hay en un mol de sustancia?",
+    "author": "Química"
+  },
+  "302": {
+    "phrase": "¿Sabías que la tabla periódica ordena los elementos por número atómico?",
+    "author": "Química"
+  },
+  "303": {
+    "phrase": "¿Sabías que el carbono es la base química de la vida conocida?",
+    "author": "Química"
+  },
+  "304": {
+    "phrase": "¿Sabías que el oxígeno fue descubierto de forma independiente por varios científicos en el siglo XVIII?",
+    "author": "Química"
+  },
+  "305": {
+    "phrase": "¿Sabías que la fotosíntesis convierte luz, agua y CO₂ en azúcares y oxígeno?",
+    "author": "Biología"
+  },
+  "306": {
+    "phrase": "La filosofía comienza en el asombro.",
+    "author": "Platón"
+  },
+  "307": {
+    "phrase": "La idea del bien es la más alta de las ideas.",
+    "author": "Platón"
+  },
+  "308": {
+    "phrase": "El cuerpo es la prisión del alma, decía cierta tradición platónica.",
+    "author": "Platón"
+  },
+  "309": {
+    "phrase": "Ningún hombre es una isla.",
+    "author": "John Donne"
+  },
+  "310": {
+    "phrase": "Pregunta no lo que tu país puede hacer por ti; pregunta qué puedes hacer tú por tu país.",
+    "author": "John F. Kennedy"
+  },
+  "311": {
+    "phrase": "Tenemos delante de nosotros, si nos atrevemos, la oportunidad de construir un mundo nuevo.",
+    "author": "Pensamiento"
+  },
+  "312": {
+    "phrase": "La ciencia sin religión está coja; la religión sin ciencia está ciega.",
+    "author": "Albert Einstein"
+  },
+  "313": {
+    "phrase": "Dos cosas llenan el ánimo de admiración: el cielo estrellado y la ley moral dentro de mí.",
+    "author": "Immanuel Kant"
+  },
+  "314": {
+    "phrase": "Obra solo según una máxima que puedas querer que se convierta en ley universal.",
+    "author": "Immanuel Kant"
+  },
+  "315": {
+    "phrase": "El cielo está lleno de estrellas; la mente, de preguntas.",
+    "author": "Pensamiento"
+  },
+  "316": {
+    "phrase": "¿Sabías que el latido de una ballena azul se puede oír a kilómetros bajo el agua?",
+    "author": "Biología marina"
+  },
+  "317": {
+    "phrase": "¿Sabías que algunos hongos brillan en la oscuridad por bioluminiscencia?",
+    "author": "Biología"
+  },
+  "318": {
+    "phrase": "¿Sabías que el ajolote puede regenerar extremidades y partes del corazón?",
+    "author": "Biología"
+  },
+  "319": {
+    "phrase": "¿Sabías que las ranas pueden respirar en parte a través de la piel?",
+    "author": "Biología"
+  },
+  "320": {
+    "phrase": "¿Sabías que el perezoso baja del árbol principalmente para defecar?",
+    "author": "Biología"
+  },
+  "321": {
+    "phrase": "La vida te pregunta a cada instante: ¿quién eres?",
+    "author": "Pensamiento"
+  },
+  "322": {
+    "phrase": "No hay viento favorable para quien no sabe a qué puerto se dirige.",
+    "author": "Séneca"
+  },
+  "323": {
+    "phrase": "No es que tengamos poco tiempo, sino que perdemos mucho.",
+    "author": "Séneca"
+  },
+  "324": {
+    "phrase": "Mientras esperamos vivir, la vida pasa.",
+    "author": "Séneca"
+  },
+  "325": {
+    "phrase": "La dificultad fortalece la mente como el ejercicio fortalece el cuerpo.",
+    "author": "Séneca"
+  },
+  "326": {
+    "phrase": "Si un hombre no sabe a qué puerto se dirige, ningún viento le es favorable.",
+    "author": "Séneca"
+  },
+  "327": {
+    "phrase": "Lo que duele, instruye.",
+    "author": "Benjamin Franklin"
+  },
+  "328": {
+    "phrase": "Invertir en conocimiento siempre paga el mejor interés.",
+    "author": "Benjamin Franklin"
+  },
+  "329": {
+    "phrase": "Dime y lo olvido, enséñame y lo recuerdo, involúcrame y lo aprendo.",
+    "author": "Benjamin Franklin"
+  },
+  "330": {
+    "phrase": "La energía y la persistencia conquistan todas las cosas.",
+    "author": "Benjamin Franklin"
+  },
+  "331": {
+    "phrase": "¿Sabías que el Wi‑Fi y muchas tecnologías usan ondas de radio, una forma de luz no visible?",
+    "author": "Tecnología"
+  },
+  "332": {
+    "phrase": "¿Sabías que un bit es la unidad mínima de información: 0 o 1?",
+    "author": "Tecnología"
+  },
+  "333": {
+    "phrase": "¿Sabías que internet empezó como una red de investigación entre universidades y laboratorios?",
+    "author": "Tecnología"
+  },
+  "334": {
+    "phrase": "¿Sabías que el primer correo electrónico se envió en la década de 1970?",
+    "author": "Tecnología"
+  },
+  "335": {
+    "phrase": "¿Sabías que la palabra «algoritmo» viene del nombre del matemático Al-Juarismi?",
+    "author": "Matemáticas"
+  },
+  "336": {
+    "phrase": "La poesía es la respiración del alma.",
+    "author": "Literatura"
+  },
+  "337": {
+    "phrase": "Un haiku captura un instante como una fotografía hecha de sílabas.",
+    "author": "Literatura"
+  },
+  "338": {
+    "phrase": "El soneto es una caja de catorce versos para una idea intensa.",
+    "author": "Literatura"
+  },
+  "339": {
+    "phrase": "La novela es un mundo completo dentro de páginas.",
+    "author": "Literatura"
+  },
+  "340": {
+    "phrase": "El ensayo piensa en voz alta sobre el papel.",
+    "author": "Literatura"
+  },
+  "341": {
+    "phrase": "La tragedia muestra la grandeza y la falla humana.",
+    "author": "Literatura"
+  },
+  "342": {
+    "phrase": "La comedia nos enseña a reírnos de nuestras contradicciones.",
+    "author": "Literatura"
+  },
+  "343": {
+    "phrase": "El mito explica el mundo con imágenes antes que con fórmulas.",
+    "author": "Pensamiento"
+  },
+  "344": {
+    "phrase": "La fábula pone verdades en boca de animales.",
+    "author": "Literatura"
+  },
+  "345": {
+    "phrase": "El cuento es un universo breve con una sorpresa al final.",
+    "author": "Literatura"
+  },
+  "346": {
+    "phrase": "¿Sabías que el latido cardíaco de un bebé en el útero puede oírse con un Doppler?",
+    "author": "Medicina"
+  },
+  "347": {
+    "phrase": "¿Sabías que las vacunas entrenan al sistema inmune sin causar la enfermedad grave?",
+    "author": "Medicina"
+  },
+  "348": {
+    "phrase": "¿Sabías que lavarse las manos reduce mucho la transmisión de muchas infecciones?",
+    "author": "Medicina"
+  },
+  "349": {
+    "phrase": "¿Sabías que el ejercicio regular mejora el ánimo además de la salud física?",
+    "author": "Medicina"
+  },
+  "350": {
+    "phrase": "¿Sabías que dormir bien es tan importante para la salud como una buena alimentación?",
+    "author": "Medicina"
+  },
+  "351": {
+    "phrase": "Cultiva un jardín en tu mente: planta ideas, arranca miedos.",
+    "author": "Pensamiento"
+  },
+  "352": {
+    "phrase": "La curiosidad es el principio de todas las ciencias y de todas las artes.",
+    "author": "Pensamiento"
+  },
+  "353": {
+    "phrase": "Preguntar bien es ya empezar a entender.",
+    "author": "Pensamiento"
+  },
+  "354": {
+    "phrase": "El asombro es una forma de respeto ante el mundo.",
+    "author": "Pensamiento"
+  },
+  "355": {
+    "phrase": "Aprender es recordar que no sabíamos.",
+    "author": "Pensamiento"
+  },
+  "356": {
+    "phrase": "Enseñar es aprender dos veces.",
+    "author": "Joseph Joubert"
+  },
+  "357": {
+    "phrase": "La mejor herencia es una buena educación.",
+    "author": "Pensamiento"
+  },
+  "358": {
+    "phrase": "Un maestro abre la puerta; el alumno entra solo.",
+    "author": "Proverbio chino"
+  },
+  "359": {
+    "phrase": "El saber no ocupa lugar, pero sí transforma el que lo recibe.",
+    "author": "Pensamiento"
+  },
+  "360": {
+    "phrase": "Hoy aprendiste algo: eso ya hace el día distinto.",
+    "author": "Pensamiento"
+  },
+  "361": {
+    "phrase": "¿Sabías que mirar las estrellas es mirar el pasado, porque su luz tarda años en llegar?",
+    "author": "Astronomía"
+  },
+  "362": {
+    "phrase": "Una buena frase cabe en un bolsillo y dura toda la vida.",
+    "author": "Literatura"
+  },
+  "363": {
+    "phrase": "Piensa despacio, habla con claridad, actúa con coraje.",
+    "author": "Pensamiento"
+  },
+  "364": {
+    "phrase": "Que la lectura te acompañe como un faro, no como una carga.",
+    "author": "Literatura"
+  },
+  "365": {
+    "phrase": "Cierra el día con una idea que quieras recordar mañana.",
+    "author": "Pensamiento"
+  }
+}
