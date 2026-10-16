@@ -108,12 +108,19 @@ class LocalNotifications {
       useSafeArea: true,
       context: context, 
       builder: (context) {
+        final colors = Theme.of(context).colorScheme;
         return AlertDialog(
-          insetPadding: const EdgeInsets.all(0.5),
-          title: Center(child: Text("❤", style: textStyles.titleSmall)),
-          content: const Text(
-            "¿Deseas que te avisemos cuando haya una nueva frase?", 
-            style: TextStyle(fontSize: 18), textAlign: TextAlign.center
+          title: Column(
+            children: [
+              Icon(Icons.notifications_active_outlined, size: 36, color: colors.primary),
+              const SizedBox(height: 8),
+              Text('Recordatorios', style: textStyles.titleSmall),
+            ],
+          ),
+          content: Text(
+            '¿Quieres que te avisemos cada mañana cuando haya una nueva frase?',
+            style: textStyles.bodyMedium?.copyWith(fontSize: 16),
+            textAlign: TextAlign.center,
           ),
           actionsAlignment: MainAxisAlignment.center,
           actions: [
@@ -122,14 +129,14 @@ class LocalNotifications {
                 granted = true;
                 Navigator.pop(context);
               },
-              child: const Text("Si"),
+              child: const Text('Sí'),
             ),
             TextButton(
               onPressed: () {
                 granted = false;
                 Navigator.pop(context);
               },
-              child: const Text("Despues")
+              child: const Text('Después'),
             ),
           ],
         );

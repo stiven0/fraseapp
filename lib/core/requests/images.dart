@@ -11,8 +11,12 @@ class Images {
   Future<String> getRandomImage() async {
 
     try {
-
-      final response = await dio.get('/700');
+      // Picsum caches /{size}; a changing query forces a new redirect each call.
+      final cacheBuster = DateTime.now().microsecondsSinceEpoch;
+      final response = await dio.get(
+        '/700',
+        queryParameters: {'random': cacheBuster},
+      );
       final image = response.realUri.toString();
       return image;
       

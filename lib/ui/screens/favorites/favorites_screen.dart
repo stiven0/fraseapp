@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_riverpod/flutter_riverpod.dart';
-import 'dart:math' as math;
 
 import 'package:fraseapp/core/core.dart';
 import 'package:fraseapp/shared/shared.dart';
@@ -43,10 +42,10 @@ class FavoriteScreenState extends ConsumerState<FavoriteScreen> {
     if ( !isLoading ) {
 
       return Center(
-        child:  CircularProgressIndicator(
-          strokeWidth: 2, 
-          color: isDarkMode ? colorsScheme.surface : colorsScheme.primary
-        )
+        child: CircularProgressIndicator(
+          strokeWidth: 2,
+          color: colorsScheme.primary,
+        ),
       );
 
     } else {
@@ -59,21 +58,38 @@ class FavoriteScreenState extends ConsumerState<FavoriteScreen> {
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
               Icon( Icons.favorite_outline_sharp, size: 70, color: colorsScheme.primary ),
-              Text('Oppss!!', style: TextStyle(fontSize: 30, color: colorsScheme.primary) ),
+              const SizedBox(height: 12),
+              Text(
+                'Sin favoritos aún',
+                style: TextStyle(
+                  fontSize: 26,
+                  fontWeight: FontWeight.bold,
+                  color: colorsScheme.primary,
+                ),
+              ),
 
               const SizedBox(height: 10),
 
-              const Text('No tienes Frases favoritas.', style: TextStyle(fontSize: 20, color: Colors.black45)),
+              Text(
+                'Guarda las frases que más te gusten para verlas aquí.',
+                style: TextStyle(
+                  fontSize: 16,
+                  color: isDarkMode
+                      ? colorsScheme.onSurface.withValues(alpha: 0.7)
+                      : Colors.black45,
+                ),
+                textAlign: TextAlign.center,
+              ),
 
               const SizedBox(height: 30),
 
               FilledButton.tonal(
                 onPressed: () => context.go('/'),
                 style: ButtonStyle(
-                  backgroundColor: WidgetStateProperty.all( isDarkMode ? Colors.black87 : colorsScheme.primary ),
-                  foregroundColor: WidgetStateProperty.all( Colors.white ) 
-                ), 
-                child: const Text('Ver frase del dia'),
+                  backgroundColor: WidgetStateProperty.all(colorsScheme.primary),
+                  foregroundColor: WidgetStateProperty.all(colorsScheme.onPrimary),
+                ),
+                child: const Text('Ver frase del día'),
               )
             ],
           ),
@@ -90,10 +106,10 @@ class FavoriteScreenState extends ConsumerState<FavoriteScreen> {
               floating: true,
               flexibleSpace: FlexibleSpaceBar(
                 title: Text(
-                  'Lista de favoritos: ${ favoritePhrases.length }', 
+                  'Favoritos · ${favoritePhrases.length}',
                   style: TextStyle( 
                     fontSize: 20, 
-                    color: colorsScheme.brightness == Brightness.light ? colorsScheme.primary : colorsScheme.surface, 
+                    color: colorsScheme.primary,
                     fontWeight: FontWeight.bold 
                   )
                 ),
@@ -120,6 +136,7 @@ class FavoriteScreenState extends ConsumerState<FavoriteScreen> {
         ),
         floatingActionButton: favoritePhrases.length > 1 
         ? FloatingActionButton(
+          tooltip: 'Ordenar por fecha',
           onPressed: (){
             if ( order == TypeOrder.defect ) {
               favoritePhrases.sort((a, b) {
@@ -134,8 +151,7 @@ class FavoriteScreenState extends ConsumerState<FavoriteScreen> {
             }
             setState(() {});
           },
-          backgroundColor: colorsScheme.primary,
-          child: Icon(Icons.low_priority_outlined, color: colorsScheme.brightness == Brightness.light ? Colors.white : Colors.black),
+          child: const Icon(Icons.low_priority_outlined),
         ) 
         : null,
       );
@@ -187,8 +203,11 @@ class _CustomDismissibleFavorite extends ConsumerWidget {
         return Scaffold(
           appBar: AppBar(
             title: FilledButton.tonal(
-              onPressed: () => Navigator.pop(context), 
-              child: const Text('Cerrar')
+              onPressed: () => Navigator.pop(context),
+              style: ButtonStyle(
+                foregroundColor: WidgetStateProperty.all(Colors.white),
+              ),
+              child: const Text('Cerrar'),
             ),
             centerTitle: true,
             backgroundColor: isDarkMode ? colorsTheme.surface : colorsTheme.primary,
@@ -208,24 +227,35 @@ class _CustomDismissibleFavorite extends ConsumerWidget {
     await showDialog(
       context: context, 
       builder: (context) {
+        final colors = Theme.of(context).colorScheme;
         return AlertDialog(
-          title: Center(child: Text("¿?", style: textStyles.titleMedium,)),
-          content: Text("¿Estás seguro de eliminar esta frase?", style: textStyles.titleSmall, textAlign: TextAlign.center,),
-
+          title: Column(
+            children: [
+              Icon(Icons.delete_outline, size: 36, color: colors.error),
+              const SizedBox(height: 8),
+              Text('Eliminar favorito', style: textStyles.titleSmall),
+            ],
+          ),
+          content: Text(
+            '¿Estás seguro de eliminar esta frase de favoritos?',
+            style: textStyles.bodyMedium,
+            textAlign: TextAlign.center,
+          ),
+          actionsAlignment: MainAxisAlignment.center,
           actions: [
             TextButton(
               onPressed: () {
                 dismiss = true;
                 Navigator.pop(context);
               },
-              child: const Text("Si"),
+              child: const Text('Eliminar'),
             ),
             FilledButton(
               onPressed: () {
                 dismiss = false;
                 Navigator.pop(context);
               },
-              child: const Text("No")
+              child: const Text('Cancelar'),
             ),
           ],
         );
@@ -246,16 +276,16 @@ class _CustomDismissibleFavorite extends ConsumerWidget {
 
     return Dismissible(
       background: Container(
-        color: Colors.blue,
+        color: colorsScheme.primary,
         alignment: Alignment.centerLeft,
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: const Icon( Icons.share_outlined, color: Colors.white ),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Icon(Icons.share_outlined, color: colorsScheme.onPrimary),
       ),
       secondaryBackground: Container(
-        color: Colors.red,
+        color: colorsScheme.error,
         alignment: Alignment.centerRight,
-        padding: const EdgeInsets.symmetric(horizontal: 10),
-        child: const Icon( Icons.delete_outline, color: Colors.white ),
+        padding: const EdgeInsets.symmetric(horizontal: 16),
+        child: Icon(Icons.delete_outline, color: colorsScheme.onError),
       ), 
       confirmDismiss:(direction) async {
         if ( direction == DismissDirection.endToStart ) {
@@ -295,27 +325,37 @@ class _CustomDismissibleFavorite extends ConsumerWidget {
       child: GestureDetector(
         onTap: ()  => openDialogPhrase(context, isDarkMode, colorsTheme),
         child: ListTile(
+          contentPadding: const EdgeInsets.symmetric(horizontal: 16, vertical: 4),
           title: Text(
             favorite['phrase'].toString().length >= 25 
             ? '${ favorite['phrase'].toString().substring(0, 24) }...' 
             : favorite['phrase'].toString(),
             style: TextStyle(
-              fontWeight: FontWeight.bold, 
-              color: colorsScheme.brightness == Brightness.light ? colorsScheme.secondary : colorsScheme.surface 
+              fontWeight: FontWeight.bold,
+              color: colorsScheme.onSurface,
             ),
           ),
-          subtitle: Text( 
-            favorite['author'], 
-            style: TextStyle( color: colorsScheme.brightness == Brightness.light ? colorsScheme.secondary : colorsScheme.surface ), ),
-          leading: DecoratedBox(
-            decoration: BoxDecoration(
-              border: Border.all(width: 2, color: Colors.white),
-              borderRadius: BorderRadius.circular(10),
-              color: Color( (math.Random().nextDouble() * 0xFFFFFF).toInt() ).withOpacity(1.0),
+          subtitle: Text(
+            favorite['author'],
+            style: TextStyle(
+              color: colorsScheme.onSurface.withValues(alpha: 0.7),
             ),
-            child: Container(
-              padding: const EdgeInsets.all(15.0),
-              child: const Icon( Icons.list_alt_outlined, color: Colors.white, size: 18.0 ),
+          ),
+          leading: ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: SizedBox(
+              width: 56,
+              height: 56,
+              child: Image.network(
+                favorite['image']?.toString() ?? '',
+                fit: BoxFit.cover,
+                errorBuilder: (context, error, stackTrace) {
+                  return Image.asset(
+                    'assets/images/default_image.jpg',
+                    fit: BoxFit.cover,
+                  );
+                },
+              ),
             ),
           ),
         ),

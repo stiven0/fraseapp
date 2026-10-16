@@ -43,24 +43,22 @@ class CustomBottomNavigation extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
 
-    final colorsTheme = Theme.of(context).colorScheme;
-
     return NavigationBar(
         elevation: 0,
         selectedIndex: getCurrentIndexTab(context),
         onDestinationSelected: (index) => onItemTap( context, index ),
-        destinations: [
+        destinations: const [
 
           NavigationDestination(
-            icon: Icon( Icons.explore_outlined, color: colorsTheme.primary ), 
+            icon: Icon( Icons.explore_outlined ), 
             label: 'Explorar',
-            selectedIcon: Icon( Icons.explore, color: colorsTheme.primary )
+            selectedIcon: Icon( Icons.explore ),
           ),
 
           NavigationDestination(
-            icon: Icon( Icons.favorite_border_outlined, color: colorsTheme.primary ), 
+            icon: Icon( Icons.favorite_border_outlined ), 
             label: 'Favoritos',
-            selectedIcon: Icon( Icons.favorite, color: colorsTheme.primary, )
+            selectedIcon: Icon( Icons.favorite ),
           ),
 
         ],

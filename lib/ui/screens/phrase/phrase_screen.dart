@@ -23,6 +23,7 @@ class PhraseScreen extends ConsumerWidget {
       SnackBar(
         content: Text(messsage),
         duration: const Duration(seconds: 2),
+        behavior: SnackBarBehavior.floating,
       )
     );
 
@@ -44,7 +45,15 @@ class PhraseScreen extends ConsumerWidget {
             favorite.image,
             fit: BoxFit.cover,
             loadingBuilder: (context, child, loadingProgress) {
-              return child;
+              if (loadingProgress == null) return child;
+              return Container(
+                color: Colors.black87,
+                alignment: Alignment.center,
+                child: const CircularProgressIndicator(
+                  strokeWidth: 2,
+                  color: Colors.white54,
+                ),
+              );
             },
             errorBuilder: (context, error, stackTrace) {
               return Image.asset('assets/images/default_image.jpg', fit: BoxFit.cover);
@@ -52,135 +61,157 @@ class PhraseScreen extends ConsumerWidget {
           )
         ),
 
-        /// Gradient the image
+        /// Cinematic scrim: darker at top/bottom for icons and text
         const _CustomGradient(
           begin: Alignment.topCenter,
           end: Alignment.bottomCenter,
-          stops: [0.0, 1.0],
+          stops: [0.0, 0.35, 0.65, 1.0],
           colors: [
-            Colors.black45,
-            Colors.black45
-          ]
+            Color(0x99000000),
+            Color(0x33000000),
+            Color(0x33000000),
+            Color(0xB3000000),
+          ],
         ),
 
         /// Phrase
         SizedBox.expand(
-          child: Container(
-            padding: const EdgeInsets.symmetric( horizontal: 10 ),
+          child: Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 24),
             child: Column(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-            
-                Text( '"${favorite.phrase}"', 
-                      style: textStyles.titleSmall!.copyWith(color: Colors.white),
-                      textAlign: TextAlign.center,
+                Text(
+                  '"${favorite.phrase}"',
+                  style: textStyles.titleMedium?.copyWith(
+                    color: Colors.white,
+                    fontSize: 24,
+                    height: 1.35,
+                    fontWeight: FontWeight.w600,
+                    shadows: const [
+                      Shadow(
+                        blurRadius: 16,
+                        color: Color(0x99000000),
+                        offset: Offset(0, 2),
+                      ),
+                    ],
+                  ),
+                  textAlign: TextAlign.center,
                 ),
-          
-                const SizedBox(
-                  height: 50,
-                ),
-
+                const SizedBox(height: 28),
                 TextButton(
                   onPressed: () async {
-                    final url = '${ Environments.urlWikipedia }/${ favorite.author }';
-                    await openUrl(url); 
-                  }, 
-                  child: Text( favorite.author, 
-                      style: textStyles.titleSmall!.copyWith(
-                        color: const Color.fromARGB(190, 255, 255, 255),
-                        decoration: TextDecoration.underline,
-                        decorationColor: const Color.fromARGB(190, 255, 255, 255),
-                      ),
-                      textAlign: TextAlign.center,
-                  )
-                )
-            
+                    final url = '${Environments.urlWikipedia}/${Uri.encodeComponent(favorite.author)}';
+                    await openUrl(url);
+                  },
+                  child: Text(
+                    favorite.author,
+                    style: textStyles.titleSmall?.copyWith(
+                      color: const Color(0xD9FFFFFF),
+                      fontSize: 16,
+                      fontWeight: FontWeight.w500,
+                      decoration: TextDecoration.underline,
+                      decorationColor: const Color(0xD9FFFFFF),
+                    ),
+                    textAlign: TextAlign.center,
+                  ),
+                ),
               ],
             ),
-          )
-        ),        
-
-        /// icon favorite
-        Positioned(
-          top: 10,
-          right: 0,
-          child: IconButton(
-            onPressed: () async {
-              await favoritesProvider.tooglePhraseFavorite( favorite );
-              ref.invalidate( isPhraseFavoriteProvider( favorite.phrase ) );
-              await ref.read( favoritesPhrasesProvider.notifier ).getPhrasesFavorites( toDelay: false );
-
-              // sorting phrases
-              final order = ref.read(typeOrderPhraseProvider.notifier).state;
-              if ( order == TypeOrder.defect ) {
-                ref.read(favoritesPhrasesProvider).sort((a, b) {
-                  return DateTime.parse( a['date'].toString() ).isBefore( DateTime.parse( b['date'].toString() )) ? -1 : 1;
-                });
-              } else {
-                ref.read(favoritesPhrasesProvider).sort((a, b) {
-                  return DateTime.parse( a['date'].toString() ).isBefore( DateTime.parse( b['date'].toString() )) ? 1 : -1;
-                });
-              }
-              
-              final isFavorite = await favoritesProvider.isPhraseFavorite( favorite.phrase );
-              if ( !context.mounted ) return;
-              if ( isFavorite ) {
-                
-                showSnackbarNotification( 'Agregado a favoritos', context );
-                final timeExpirationRequestNotification = await ref.read( favoritesPhrasesProvider.notifier ).getTimeToRequestNotification();
-                if ( timeExpirationRequestNotification != 'null' ) {
-                  final timeExpiration = DateTime.parse(timeExpirationRequestNotification);
-                  if ( timeExpiration.isBefore( DateTime.now() ) ) {
-                    ref.read( favoritesPhrasesProvider.notifier ).setOrDeleteWaitingTimeToRequestNotification(
-                      RequestNotification.approved
-                    );
-                    if ( !context.mounted ) return;
-                    LocalNotifications.requestPermissionsLocalNotifications( context, textStyles );
-                  }
-                } else {
-                  if ( !context.mounted ) return;
-                  LocalNotifications.requestPermissionsLocalNotifications( context, textStyles );
-                }
-
-              } else {
-
-                // sorting phrases
-                if ( order == TypeOrder.defect ) {
-                  ref.read(favoritesPhrasesProvider).sort((a, b) {
-                    return DateTime.parse( a['date'].toString() ).isBefore( DateTime.parse( b['date'].toString() )) ? -1 : 1;
-                  });
-                } else {
-                  ref.read(favoritesPhrasesProvider).sort((a, b) {
-                    return DateTime.parse( a['date'].toString() ).isBefore( DateTime.parse( b['date'].toString() )) ? 1 : -1;
-                  });
-                }
-                if ( ref.read(favoritesPhrasesProvider).isEmpty ) ref.read(typeOrderPhraseProvider.notifier).state = TypeOrder.date;
-
-              }
-            }, 
-            icon: isFavoriteFuture.when(
-              loading: () => const CircularProgressIndicator(strokeWidth: 2),
-              data: (isFavorite) => isFavorite 
-              ? const Icon( Icons.favorite_rounded, color: Colors.red )  
-              : const Icon( Icons.favorite_border ), 
-              error: (_, stackTrace) => throw UnimplementedError(), 
-              skipLoadingOnRefresh: false
-            ),
-            color: Colors.white,
-          )
+          ),
         ),
 
-        /// icon share
+        /// Share + favorite actions
         Positioned(
-          top: 10,
+          top: 0,
           left: 0,
-          child: IconButton(
-            onPressed: (){
-              toShare('"${favorite.phrase}" ✍🏼 ${favorite.author}');
-            }, 
-            icon: const Icon(Icons.share),
-            color: Colors.white,
-          )
+          right: 0,
+          child: SafeArea(
+            bottom: false,
+            child: Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 4, vertical: 4),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  IconButton(
+                    onPressed: () {
+                      toShare('"${favorite.phrase}" ✍🏼 ${favorite.author}');
+                    },
+                    icon: const Icon(Icons.share),
+                    color: Colors.white,
+                  ),
+                  IconButton(
+                    onPressed: () async {
+                      await favoritesProvider.tooglePhraseFavorite( favorite );
+                      ref.invalidate( isPhraseFavoriteProvider( favorite.phrase ) );
+                      await ref.read( favoritesPhrasesProvider.notifier ).getPhrasesFavorites( toDelay: false );
+
+                      // sorting phrases
+                      final order = ref.read(typeOrderPhraseProvider.notifier).state;
+                      if ( order == TypeOrder.defect ) {
+                        ref.read(favoritesPhrasesProvider).sort((a, b) {
+                          return DateTime.parse( a['date'].toString() ).isBefore( DateTime.parse( b['date'].toString() )) ? -1 : 1;
+                        });
+                      } else {
+                        ref.read(favoritesPhrasesProvider).sort((a, b) {
+                          return DateTime.parse( a['date'].toString() ).isBefore( DateTime.parse( b['date'].toString() )) ? 1 : -1;
+                        });
+                      }
+                      
+                      final isFavorite = await favoritesProvider.isPhraseFavorite( favorite.phrase );
+                      if ( !context.mounted ) return;
+                      if ( isFavorite ) {
+                        
+                        showSnackbarNotification( 'Agregado a favoritos', context );
+                        final timeExpirationRequestNotification = await ref.read( favoritesPhrasesProvider.notifier ).getTimeToRequestNotification();
+                        if ( timeExpirationRequestNotification != 'null' ) {
+                          final timeExpiration = DateTime.parse(timeExpirationRequestNotification);
+                          if ( timeExpiration.isBefore( DateTime.now() ) ) {
+                            ref.read( favoritesPhrasesProvider.notifier ).setOrDeleteWaitingTimeToRequestNotification(
+                              RequestNotification.approved
+                            );
+                            if ( !context.mounted ) return;
+                            LocalNotifications.requestPermissionsLocalNotifications( context, textStyles );
+                          }
+                        } else {
+                          if ( !context.mounted ) return;
+                          LocalNotifications.requestPermissionsLocalNotifications( context, textStyles );
+                        }
+
+                      } else {
+
+                        // sorting phrases
+                        if ( order == TypeOrder.defect ) {
+                          ref.read(favoritesPhrasesProvider).sort((a, b) {
+                            return DateTime.parse( a['date'].toString() ).isBefore( DateTime.parse( b['date'].toString() )) ? -1 : 1;
+                          });
+                        } else {
+                          ref.read(favoritesPhrasesProvider).sort((a, b) {
+                            return DateTime.parse( a['date'].toString() ).isBefore( DateTime.parse( b['date'].toString() )) ? 1 : -1;
+                          });
+                        }
+                        if ( ref.read(favoritesPhrasesProvider).isEmpty ) ref.read(typeOrderPhraseProvider.notifier).state = TypeOrder.date;
+
+                      }
+                    }, 
+                    icon: isFavoriteFuture.when(
+                      loading: () => const SizedBox(
+                        width: 22,
+                        height: 22,
+                        child: CircularProgressIndicator(strokeWidth: 2, color: Colors.white54),
+                      ),
+                      data: (isFavorite) => isFavorite 
+                      ? const Icon( Icons.favorite_rounded, color: Colors.red )  
+                      : const Icon( Icons.favorite_border ), 
+                      error: (_, stackTrace) => throw UnimplementedError(), 
+                      skipLoadingOnRefresh: false
+                    ),
+                    color: Colors.white,
+                  ),
+                ],
+              ),
+            ),
+          ),
         ),
 
       ],

@@ -68,6 +68,7 @@ class ExploreScreenState extends ConsumerState<ExploreScreen> {
       SnackBar(
         content: Text(messsage),
         duration: const Duration(seconds: 2),
+        behavior: SnackBarBehavior.floating,
       )
     );
 
@@ -99,18 +100,18 @@ class ExploreScreenState extends ConsumerState<ExploreScreen> {
 
     return isLoading 
     ? Center(
-        child:  CircularProgressIndicator(
-          strokeWidth: 2, 
-          color: isDarkMode ? colorsTheme.surface : colorsTheme.primary
-        )
+        child: CircularProgressIndicator(
+          strokeWidth: 2,
+          color: colorsTheme.primary,
+        ),
       )
     : error == Errors.none 
     ? Scaffold(
       body: PhraseScreen(favorite: phrase!),
       floatingActionButton: FloatingActionButton(
+        tooltip: 'Otra frase',
         onPressed: () => reloadData(delayed: false, randomPhrase: true),
-        backgroundColor: colorsTheme.primary,
-        child: Icon( Icons.refresh_outlined, color: isDarkMode ? Colors.black : Colors.white ),
+        child: const Icon(Icons.refresh_outlined),
       ),
     ) 
     : Center(
@@ -123,8 +124,13 @@ class ExploreScreenState extends ConsumerState<ExploreScreen> {
           SizedBox(
             width: size.width * 0.9,
             child: Text(
-              'Ha ocurrido un error, verifica tu conexión e inténtalo nuevamente', 
-              style: TextStyle(fontSize: 20, color: isDarkMode ? colorsTheme.surface : Colors.black45),
+              'No pudimos cargar la frase. Revisa tu conexión e inténtalo de nuevo.',
+              style: TextStyle(
+                fontSize: 18,
+                color: isDarkMode
+                    ? colorsTheme.onSurface.withValues(alpha: 0.75)
+                    : Colors.black45,
+              ),
               textAlign: TextAlign.center,
             ),
           ),
@@ -132,11 +138,11 @@ class ExploreScreenState extends ConsumerState<ExploreScreen> {
           FilledButton.icon(
             onPressed: () => reloadData(), 
             icon: const Icon( Icons.restart_alt_outlined ), 
-            label: const Text('Intentar'),
+            label: const Text('Reintentar'),
             iconAlignment: IconAlignment.start,
-            style: ButtonStyle( 
-              backgroundColor: WidgetStateProperty.all( isDarkMode ? Colors.black87 : colorsTheme.primary ),
-              foregroundColor:  WidgetStateProperty.all( isDarkMode ? Colors.white : Colors.white ), 
+            style: ButtonStyle(
+              backgroundColor: WidgetStateProperty.all(colorsTheme.primary),
+              foregroundColor: WidgetStateProperty.all(colorsTheme.onPrimary),
             ),
           )
         ],

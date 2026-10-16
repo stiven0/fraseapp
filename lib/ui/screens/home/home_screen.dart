@@ -25,21 +25,35 @@ class HomeScreen extends ConsumerWidget {
       appBar: AppBar(
         leading: Builder(
           builder: (context) => IconButton(
+            tooltip: 'Calificar app',
             onPressed: () => inAppReview.openStoreListing(), 
             icon: const Icon(Icons.star_border_outlined)
           )
         ),
-        title: const Text('FraseAPP', style: TextStyle( color: Colors.white )),
+        title: Text(
+          'FraseAPP',
+          style: Theme.of(context).textTheme.titleMedium?.copyWith(
+            color: Colors.white,
+            fontSize: 22,
+            letterSpacing: 0.6,
+            fontWeight: FontWeight.w700,
+          ),
+        ),
         centerTitle: true,
         actions: [
           IconButton(
-            icon: Icon( (isDarkMode ? Icons.dark_mode_outlined : Icons.light_mode_outlined), color: Colors.white, ),
+            tooltip: isDarkMode ? 'Modo claro' : 'Modo oscuro',
+            icon: Icon(
+              isDarkMode ? Icons.dark_mode_outlined : Icons.light_mode_outlined,
+              color: Colors.white,
+            ),
             onPressed: (){
               ref.read( themeNotifierProvider.notifier ).toggleDarkMode();
             }, 
           )
         ],
         backgroundColor: isDarkMode ? colorsTheme.surface : colorsTheme.primary,
+        foregroundColor: Colors.white,
         iconTheme: const IconThemeData(color: Colors.white),
       ),
       body: SafeArea(child: childView),
